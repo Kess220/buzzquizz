@@ -162,3 +162,20 @@ input:focus {
 ion-icon {
     font-size: 26px;
 }
+
+.proseguir-criar-niveis {
+  font-weight: 400;
+font-size: 21px;
+line-height: 25px;
+display: flex;
+align-items: center;
+justify-content: center;
+text-align: center;
+background-color: #EC362D;
+color: #FFF5F4;
+width: 352.82px;
+height: 54px;
+border: none;
+border-radius: 15px;
+margin-top: 110px;
+}
