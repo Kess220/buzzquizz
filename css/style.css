@@ -46,19 +46,59 @@ header > p {
   color: #ec362d;
   margin-top: 20px;
 }
+.criacaoQuizz > button:hover {
+  cursor: pointer;
+}
 .todosOsQuizzes {
   width: 1051px;
   height: 409px;
+  margin-top: 77px;
+}
+.todosOsQuizzes > p {
+  margin-bottom: 12px;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
 }
 .quizzes {
-  position: relative;
   width: 340px;
   height: 181px;
+  position: relative;
+  margin-bottom: 15px;
 }
 .todosOsQuizzes .quizzes > img {
   width: 340px;
   height: 181px;
+  background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(0, 0, 0, 0.5) 64.58%,
+      #000000 100%
+    ),
+    url(/img/simpson.png);
+  border-radius: 5px;
 }
-.todosOsQuizzes .quizzes > p {
+.todosOsQuizzes .quizzes > div {
   position: absolute;
+  z-index: 66;
+  width: 100%;
+  bottom: 0;
+  width: 301px;
+}
+.todosOsQuizzes > div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.todosOsQuizzes .quizzes > div > p {
+  font-size: 19px;
+  color: white;
+  margin-bottom: 17px;
+  text-align: center;
+}
+.invisivel {
+  display: none;
+}
+.visivel {
+  display: inherit;
 }
