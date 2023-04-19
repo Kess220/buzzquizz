@@ -15,22 +15,150 @@
   <body>
     <header><p>BuzzQuizz</p></header>
     <main>
-      <section class="paginaInicial">
+      <section class="paginaInicial invisivel">
         <div class="criacaoQuizz">
-          <p>Você não criou nenhum quizz ainda :(</p>
+          <p>Você não criou nenhum quizz ainda :</p>
           <button>Criar Quizz</button>
         </div>
         <div class="todosOsQuizzes">
           <p>Todos os Quizzes</p>
-          <div class="quizzes">
-            <img
-              src="https://images.unsplash.com/photo-1517429481096-5bc77134f77c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1412&q=80"
-              alt=""
-            />
-            <p>Quanto da sua personalidade é igual de um gato?</p>
+          <div>
+            <div class="quizzes">
+              <img src="./img/simpson.png" alt="" />
+              <div><p>Quanto da sua personalidade é igual de um gato?</p></div>
+            </div>
+            <div class="quizzes">
+              <img src="./img/simpson.png" alt="" />
+              <div><p>Quanto da sua personalidade é igual de um gato?</p></div>
+            </div>
+            <div class="quizzes">
+              <img src="./img/simpson.png" alt="" />
+              <div><p>Quanto da sua personalidade é igual de um gato?</p></div>
+            </div>
+            <div class="quizzes">
+              <img src="./img/simpson.png" alt="" />
+              <div><p>Quanto da sua personalidade é igual de um gato?</p></div>
+            </div>
+            <div class="quizzes">
+              <img src="./img/simpson.png" alt="" />
+              <div><p>Quanto da sua personalidade é igual de um gato?</p></div>
+            </div>
+            <div class="quizzes">
+              <img src="./img/simpson.png" alt="" />
+              <div><p>Quanto da sua personalidade é igual de um gato?</p></div>
+            </div>
           </div>
         </div>
       </section>
+      <section class="paginaCriancaoQuiz">
+        <div>
+          <h2>Comece pelo começo</h2>
+          <div>
+            <form action="">in</form>
+          </div>
+        </div>
+      </section>
+
+      <!--TELA 9-DESKTOP FLAVIA-->
+      <section class="criar-perguntas">
+        <h2 class="crie-suas-perguntas">Crie suas perguntas</h2>
+        <div class="segura">
+          <div class="primeira-pergunta">
+            <div>
+              <h3>Pergunta 1</h3>
+            </div>
+            <input
+              type="text"
+              placeholder="Texto da pergunta"
+              required
+              minlength="20"
+              class="input"
+            />
+            <input
+              type="text"
+              placeholder="Cor de fundo da pergunta"
+              class="input"
+            />
+          </div>
+          <div class="resposta-correta">
+            <div>
+              <h3>Resposta correta</h3>
+            </div>
+            <input
+              type="text"
+              placeholder="Resposta correta"
+              required
+              minlength="20"
+              class="input"
+            />
+            <input
+              type="url"
+              placeholder="URL da imagem"
+              class="input"
+              class="input"
+            />
+          </div>
+          <div class="repostas-incorretas">
+            <div>
+              <h3>Respostas incorretas</h3>
+            </div>
+            <div class="incorreta1">
+              <input
+                type="text"
+                placeholder="Resposta incorreta 1"
+                required
+                minlength="20"
+                class="input"
+              />
+              <input type="url" placeholder="URL da imagem 1" class="input" />
+            </div>
+            <div class="incorreta2">
+              <input
+                type="text"
+                placeholder="Resposta incorreta 2"
+                required
+                minlength="20"
+                class="input"
+              />
+              <input type="url" placeholder="URL da imagem 2" class="input" />
+            </div>
+            <div class="incorreta3">
+              <input
+                type="text"
+                placeholder="Resposta incorreta 3"
+                required
+                minlength="20"
+                class="input"
+              />
+              <input type="url" placeholder="URL da imagem 3" class="input" />
+            </div>
+          </div>
+        </div>
+        <div class="criar-pergunta">
+          <div class="perguntas">
+            <h3>Pergunta 2</h3>
+            <ion-icon name="create-outline"></ion-icon>
+          </div>
+        </div>
+        <div class="criar-pergunta">
+          <div class="perguntas">
+            <h3>pergunta 3</h3>
+            <ion-icon name="create-outline"></ion-icon>
+          </div>
+        </div>
+
+        <button class="proseguir-criar-niveis">
+          Prosseguir pra criar níveis
+        </button>
+      </section>
     </main>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
   </body>
 </html>
