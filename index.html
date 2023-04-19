@@ -15,10 +15,10 @@
   <body>
     <header><p>BuzzQuizz</p></header>
     <main>
-      <section class="paginaInicial invisivel">
+      <section class="paginaInicial">
         <div class="criacaoQuizz">
           <p>Você não criou nenhum quizz ainda :</p>
-          <button>Criar Quizz</button>
+          <button onclick="criarQuizz()">Criar Quizz</button>
         </div>
         <div class="todosOsQuizzes">
           <p>Todos os Quizzes</p>
@@ -50,12 +50,19 @@
           </div>
         </div>
       </section>
-      <section class="paginaCriancaoQuiz">
+      <section class="paginaCriancaoQuiz invisivel">
         <div>
-          <h2>Comece pelo começo</h2>
+          <p>Comece pelo começo</p>
           <div>
-            <form action="">in</form>
+            <input type="text" placeholder="Título do seu quizz" />
+            <input type="url" placeholder="URL da imagem do seu quizz" />
+            <input
+              type="number"
+              placeholder="Quantidade de perguntas do quizz"
+            />
+            <input type="number" placeholder="Quantidade de níveis do quizz" />
           </div>
+          <button>Prosseguir pra criar perguntas</button>
         </div>
       </section>
 
@@ -160,7 +167,5 @@
       nomodule
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="./js/scirpt.js"></script>
   </body>
 </html>
