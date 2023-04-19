@@ -1,0 +1,64 @@
+body {
+  font-family: 'Roboto', sans-serif;
+}
+header {
+  background-color: #ec362d;
+  height: 69px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+header > p {
+  color: #ffffff;
+  font-size: 37px;
+  font-weight: bold;
+}
+.paginaInicial {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.paginaInicial > .criacaoQuizz {
+  width: 1051px;
+  height: 181px;
+  border: 1px solid #d4d4d4;
+  margin-top: 77px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.criacaoQuizz > p {
+  width: 250px;
+  font-size: 20px;
+  color: #b9b9b9;
+  font-weight: 400;
+  text-align: center;
+}
+.criacaoQuizz > button {
+  width: 151px;
+  height: 40px;
+  border-radius: 50px;
+  background-color: white;
+  border: 2px dashed #ec362d;
+  font-size: 21px;
+  color: #ec362d;
+  margin-top: 20px;
+}
+.todosOsQuizzes {
+  width: 1051px;
+  height: 409px;
+}
+.quizzes {
+  position: relative;
+  width: 340px;
+  height: 181px;
+}
+.todosOsQuizzes .quizzes > img {
+  width: 340px;
+  height: 181px;
+}
+.todosOsQuizzes .quizzes > p {
+  position: absolute;
+}
