@@ -128,43 +128,49 @@ header>p {
   display: inherit;
 }
 
-.paginaCriancaoQuiz > div {
+.paginaCriancaoQuiz>div {
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
   margin-top: 71px;
 }
-.paginaCriancaoQuiz > div > p {
+
+.paginaCriancaoQuiz>div>p {
   font-size: 23px;
   font-weight: bold;
   margin-bottom: 48px;
 }
-.paginaCriancaoQuiz > div > div {
+
+.paginaCriancaoQuiz>div>div {
   width: 600px;
   height: 256px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
 }
-.paginaCriancaoQuiz > div > div > input {
+
+.paginaCriancaoQuiz>div>div>input {
   width: 564px;
   height: 46px;
   margin-bottom: 9px;
   border-radius: 5px;
   border: 1px solid #d1d1d1;
 }
-.paginaCriancaoQuiz > div > div > input::placeholder {
+
+.paginaCriancaoQuiz>div>div>input::placeholder {
   font-size: 19px;
   padding-left: 23px;
   font-style: italic;
   margin-left: 23px;
 }
-.paginaCriancaoQuiz > div > div {
+
+.paginaCriancaoQuiz>div>div {
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
 }
-.paginaCriancaoQuiz > div > button {
+
+.paginaCriancaoQuiz>div>button {
   width: 370px;
   height: 54px;
   border-radius: 15px;
@@ -175,11 +181,16 @@ header>p {
   border: none;
   margin-top: 85px;
 }
-.paginaCriancaoQuiz > div > button:hover {
+
+.paginaCriancaoQuiz>div>button:hover {
   cursor: pointer;
 }
 
 /*CSS TELA 9-DESKTOP FLAVIA*/
+button {
+  cursor: pointer;
+}
+
 .criar-perguntas {
   display: none;
   display: flex;
@@ -267,6 +278,7 @@ input:focus {
 
 ion-icon {
   font-size: 26px;
+  cursor: pointer;
 }
 
 .prosseguir-criar-niveis {
@@ -290,7 +302,93 @@ ion-icon {
   cursor: pointer;
 }
 
-/*TELA 9*/
+/* tela 10 */
+.decisao-dos-niveis,
+.quis-pronto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.segura-nivel {
+  width: 600px;
+  height: 316px;
+  background: #FFFFFF;
+  border-radius: 5px;
+  border: 1px solid #D1D1D1;
+  padding-left: 16px;
+}
+
+.input-nivel {
+  padding: 16px;
+}
+
+.criar-niveis {
+  border: 1px solid #a49e9e;
+  background: #FFFFFF;
+  border: 1px solid #D1D1D1;
+  width: 600px;
+  height: 74px;
+  margin-top: 30px;
+  border-radius: 5px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.criar-nivel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.finalizar-quizz {
+  background: #EC362D;
+  border-radius: 15px;
+  width: 324px;
+  height: 54px;
+  border: none;
+  color: #FFF5F4;
+  font-size: 21px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+/* tela 11 */
+.img {
+  width: 500px;
+  height: 266px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 65.62%, rgba(0, 0, 0, 0.8) 100%), url(image.png);
+  border-radius: 5px;
+  margin-bottom: 30px;
+  color: #FFF5F4;
+  display: flex;
+  align-items: end;
+  padding-bottom: 30px;
+  padding-left: 30px;
+}
+
+.acessar-quis,
+.volta-home {
+  width: 220px;
+  height: 44px;
+  background: #EC362D;
+  border-radius: 15px;
+  border: none;
+  color: white;
+  font-size: 21px;
+  margin-bottom: 10px;
+}
+
+.volta-home {
+  font-weight: 400;
+  font-size: 21px;
+  color: #818181;
+  background: #E5E5E5;
+}
+
+
+/*TELA 9 MOBILE*/
 @media(max-width: 375px) {
   /* Tamanho da tela do iPhone 8 */
 
@@ -304,13 +402,15 @@ ion-icon {
     font-size: 34px;
   }
 
- .paginaInicial>.criacaoQuizz { /**/
+  .paginaInicial>.criacaoQuizz {
+    /**/
     width: 80%;
     height: 181px;
-    margin-top: 50px;  
-    }
+    margin-top: 50px;
+  }
 
- .criacaoQuizz>button {  /**/
+  .criacaoQuizz>button {
+    /**/
     width: 40%;
     height: 30px;
     font-size: 14px;
@@ -323,7 +423,8 @@ ion-icon {
   }
 
   .quizzes {
-    width: 100%; /**/
+    width: 100%;
+    /**/
     height: 150px;
     margin-bottom: 15px;
   }
@@ -333,15 +434,16 @@ ion-icon {
     height: 150px;
     border-radius: 5px;
     background-size: cover;
-   
+
   }
 
-  .todosOsQuizzes .quizzes>div>p { /**/
+  .todosOsQuizzes .quizzes>div>p {
+    /**/
     font-size: 14px;
     margin-bottom: 5px;
   }
 
-/*FLAVIA*/
+  /*FLAVIA*/
   h2 {
     margin-top: 60px;
     margin-bottom: 20px;
@@ -357,12 +459,12 @@ ion-icon {
 
 
   .input {
-width: 90%;
+    width: 90%;
     margin: 0 auto;
     margin-bottom: 10px;
-}
+  }
 
-.incorreta1,
+  .incorreta1,
   .incorreta2 {
     margin-bottom: 20px;
   }
