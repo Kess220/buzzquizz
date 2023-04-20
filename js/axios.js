@@ -45,3 +45,37 @@ function buscarInfo() {
 
   console.log(title, urlImg, numPerg, level);
 }
+
+function criePerguntas() {
+  // Pergunta1
+  const texto1 = document.getElementById("texto-pergunta").value;
+  const corPerg1 = document.getElementById("corPerg").value;
+  const perg1 = [texto1, corPerg1];
+  console.log(perg1);
+  // Resposta correta
+  const respostaCorreta = document.getElementById("res-correct").value;
+  const urlCorreta = document.getElementById("url-correct").value;
+  const correta = [respostaCorreta, urlCorreta];
+
+  console.log(correta);
+
+  //Resposta incorretas
+  const respostaIncorreta1 = document.getElementById("res-in1").value;
+  const urlIncorreta1 = document.getElementById("url-in1").value;
+
+  const respostaIncorreta2 = document.getElementById("res-in2").value;
+  const urlIncorreta2 = document.getElementById("url-in2").value;
+
+  const respostaIncorreta3 = document.getElementById("res-in3").value;
+  const urlIncorreta3 = document.getElementById("url-in3").value;
+
+  console.log(
+    respostaIncorreta1,
+    urlIncorreta1,
+    respostaIncorreta2,
+    urlIncorreta2,
+    respostaIncorreta3,
+    urlIncorreta3
+  );
+  // Pergunta 2
+}
