@@ -9,6 +9,9 @@
 body {
   font-family: 'Roboto', sans-serif;
 }
+
+/*Adryel tela 1 desktop */
+
 header {
   background-color: #ec362d;
   height: 69px;
@@ -17,34 +20,40 @@ header {
   justify-content: center;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
-header > p {
+
+header>p {
   color: #ffffff;
   font-size: 37px;
   font-weight: bold;
 }
+
 .paginaInicial {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.paginaInicial > .criacaoQuizz {
+
+.paginaInicial>.criacaoQuizz {
   width: 1051px;
   height: 181px;
-  border: 1px solid #d4d4d4;
+  border: 1px dashed #d4d4d4;
   margin-top: 77px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  border-radius: 5px;
 }
-.criacaoQuizz > p {
+
+.criacaoQuizz>p {
   width: 250px;
   font-size: 20px;
   color: #b9b9b9;
   font-weight: 400;
   text-align: center;
 }
-.criacaoQuizz > button {
+
+.criacaoQuizz>button {
   width: 151px;
   height: 40px;
   border-radius: 50px;
@@ -54,59 +63,67 @@ header > p {
   color: #ec362d;
   margin-top: 20px;
 }
-.criacaoQuizz > button:hover {
+
+.criacaoQuizz>button:hover {
   cursor: pointer;
 }
+
 .todosOsQuizzes {
   width: 1051px;
   height: 409px;
   margin-top: 77px;
 }
-.todosOsQuizzes > p {
+
+.todosOsQuizzes>p {
   margin-bottom: 12px;
   font-size: 20px;
   font-weight: bold;
   font-family: 'Roboto', sans-serif;
 }
+
 .quizzes {
   width: 340px;
   height: 181px;
   position: relative;
   margin-bottom: 15px;
 }
-.todosOsQuizzes .quizzes > img {
+
+.todosOsQuizzes .quizzes>img {
   width: 340px;
   height: 181px;
-  background: linear-gradient(
-      180deg,
+  background: linear-gradient(180deg,
       rgba(255, 255, 255, 0) 0%,
       rgba(0, 0, 0, 0.5) 64.58%,
-      #000000 100%
-    ),
+      #000000 100%),
     url(/img/simpson.png);
   border-radius: 5px;
 }
-.todosOsQuizzes .quizzes > div {
+
+.todosOsQuizzes .quizzes>div {
   position: absolute;
   z-index: 66;
   width: 100%;
   bottom: 0;
   width: 301px;
 }
-.todosOsQuizzes > div {
+
+.todosOsQuizzes>div {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
-.todosOsQuizzes .quizzes > div > p {
+
+.todosOsQuizzes .quizzes>div>p {
   font-size: 19px;
   color: white;
   margin-bottom: 17px;
   text-align: center;
 }
+
 .invisivel {
   display: none !important;
 }
+
 .visivel {
   display: inherit;
 }
@@ -161,6 +178,7 @@ header > p {
 .paginaCriancaoQuiz > div > button:hover {
   cursor: pointer;
 }
+
 /*CSS TELA 9-DESKTOP FLAVIA*/
 .criar-perguntas {
   display: none;
@@ -169,6 +187,7 @@ header > p {
   justify-content: center;
   flex-direction: column;
 }
+
 h2 {
   color: #000000;
   font-size: 23px;
@@ -182,12 +201,11 @@ h2 {
 }
 
 .segura {
-  height: 825px;
   width: 600px;
   left: 427px;
   top: 195px;
   border: 1px rgba(209, 209, 209, 1) solid;
-  background: #ffffff;
+  background: #FFFFFF;
   padding-left: 20px;
   border-radius: 5px;
 }
@@ -212,9 +230,10 @@ h3 {
   font-size: 19px;
   line-height: 22px;
   font-style: italic;
-  /*  color: #BABABA;*/
+  color: #BABABA;
   padding: 20px;
 }
+
 .input {
   margin-bottom: 10px;
 }
@@ -237,7 +256,7 @@ input:focus {
   padding-left: 20px;
   padding-right: 20px;
   border: 1px rgba(209, 209, 209, 1) solid;
-  border-radius: 6px;
+  border-radius: 5px;
 }
 
 .perguntas {
@@ -250,7 +269,7 @@ ion-icon {
   font-size: 26px;
 }
 
-.proseguir-criar-niveis {
+.prosseguir-criar-niveis {
   font-weight: 400;
   font-size: 21px;
   line-height: 25px;
@@ -258,15 +277,113 @@ ion-icon {
   align-items: center;
   justify-content: center;
   text-align: center;
-  background-color: #ec362d;
-  color: #fff5f4;
+  background-color: #EC362D;
+  color: #FFF5F4;
   width: 352.82px;
   height: 54px;
   border: none;
   border-radius: 15px;
-  margin-top: 81px;
-  margin-bottom: 50px;
+  margin-top: 110px;
 }
+
 .proseguir-criar-niveis:hover {
   cursor: pointer;
+}
+
+/*TELA 9*/
+@media(max-width: 375px) {
+  /* Tamanho da tela do iPhone 8 */
+
+  /*ADRYEL*/
+  header {
+    flex-direction: column;
+    height: 69px;
+  }
+
+  header>p {
+    font-size: 34px;
+  }
+
+ .paginaInicial>.criacaoQuizz { /**/
+    width: 80%;
+    height: 181px;
+    margin-top: 50px;  
+    }
+
+ .criacaoQuizz>button {  /**/
+    width: 40%;
+    height: 30px;
+    font-size: 14px;
+  }
+
+  .todosOsQuizzes {
+    width: 80%;
+    height: 500px;
+    margin-top: 50px;
+  }
+
+  .quizzes {
+    width: 100%; /**/
+    height: 150px;
+    margin-bottom: 15px;
+  }
+
+  .todosOsQuizzes .quizzes>img {
+    width: 100%;
+    height: 150px;
+    border-radius: 5px;
+    background-size: cover;
+   
+  }
+
+  .todosOsQuizzes .quizzes>div>p { /**/
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+
+/*FLAVIA*/
+  h2 {
+    margin-top: 60px;
+    margin-bottom: 20px;
+  }
+
+  .segura {
+    height: auto;
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+  }
+
+
+  .input {
+width: 90%;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+.incorreta1,
+  .incorreta2 {
+    margin-bottom: 20px;
+  }
+
+  .criar-pergunta {
+    width: 90%;
+    height: auto;
+    background: #FFFFFF;
+    margin-bottom: 15px;
+
+  }
+
+  .perguntas>ion-icon {
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  .prosseguir-criar-niveis {
+    font-size: 18px;
+    width: 324px;
+    margin-top: 40px;
+  }
+
 }
