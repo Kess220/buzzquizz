@@ -249,6 +249,12 @@ input:nth-child(12) {
 input:nth-child(11) {
   margin-bottom: 32px;
 }
+
+textarea:focus {
+  box-shadow: 0, 0, 0, 0;
+  outline: 0;
+}
+
 .criar-perguntas > button {
   width: 355px;
   height: 54px;
