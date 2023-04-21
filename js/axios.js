@@ -45,10 +45,16 @@ function buscarInfo() {
   if (numPerg > 4) {
     alert('esse numero é muito alto')
   }
-  
-  console.log(title, urlImg, numPerg, level)
-}
 
+ const responsse = post('https://mock-api.driven.com.br/api/vm/buzzquizz/quizzes', )
+}
+function geradorPergunta(){
+  const numPerg = document.getElementById('numPerg').value
+  for(let i = 0; i <= numPerg ; i++){
+    //pegar a div que está as perguntas 
+    // gerenciar essas perguntas 
+  }
+}
 function criePerguntas() {
   // Pergunta1
   const texto1 = document.getElementById('texto-pergunta').value

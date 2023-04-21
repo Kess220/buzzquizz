@@ -189,118 +189,76 @@ header > p {
 }
 
 /*CSS TELA 9-DESKTOP FLAVIA*/
-button {
-  cursor: pointer;
-}
-
-.criar-perguntas {
-  display: none;
+.criar-perguntas{
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
+  align-items: center;
 }
-
-h2 {
-  color: #000000;
+.criar-perguntas > h2{
   font-size: 23px;
-  line-height: 27px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 138px;
-  margin-bottom: 35px;
-  font-weight: 700;
+  font-weight: bold;
+  margin-top: 63px;
+  margin-bottom: 36px;
 }
-
-.segura {
+.perguntas{
+  display: flex;
+  flex-direction: column;
   width: 600px;
-  left: 427px;
-  top: 195px;
-  border: 1px rgba(209, 209, 209, 1) solid;
-  background: #ffffff;
-  padding-left: 20px;
-  border-radius: 5px;
+  height: 825px;
+  background-color: #ffffff;
+  padding-left: 17px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
+  margin-bottom: 50px ;
 }
-
-h3 {
-  font-weight: 700;
+.perguntas > p {
   font-size: 20px;
-  line-height: 23px;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  font-weight: bold;
+}
+.pergunta{
+  margin-top: 27px;
+  margin-bottom: 12px;
+}
+.respostaCorreta{
+  margin-top: 28px ;
+  margin-bottom: 24px ;
+
+}
+.respostaIncorreta{
+  margin-top: 28px;
+  margin-bottom: 14px;
 }
 
-.input {
-  height: 46px;
+.perguntas > input{
   width: 564px;
-  left: 443px;
-  top: 257px;
+  height: 46px;
   border-radius: 5px;
-  background: #ffffff;
-  border: 1px solid #d1d1d1;
-  font-weight: 400;
+  border: 1px solid #D1D1D1;
+  padding: 23px;
+}
+.perguntas > input::placeholder {
   font-size: 19px;
-  line-height: 22px;
   font-style: italic;
-  color: #bababa;
-  padding: 20px;
-  margin-bottom: 10px;
-}
 
-input:focus {
-  box-shadow: 0, 0, 0, 0;
-  outline: 0;
 }
-
-.incorreta1,
-.incorreta2 {
-  margin-bottom: 30px;
+.perguntas > input:nth-child(2),input:nth-child(5), input:nth-child(8), input:nth-child(10), input:nth-child(12){
+  margin-bottom: 14px;
 }
-
-.criar-pergunta {
-  width: 601px;
-  height: 74px;
-  background: #ffffff;
-  margin-top: 15px;
-  padding-left: 20px;
-  padding-right: 20px;
-  border: 1px rgba(209, 209, 209, 1) solid;
-  border-radius: 5px;
+.perguntas > input:nth-child(9), input:nth-child(11){
+  margin-bottom: 32px;
 }
-
-.perguntas {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-ion-icon {
-  font-size: 26px;
-  cursor: pointer;
-}
-
-.prosseguir-criar-niveis {
-  font-weight: 400;
-  font-size: 21px;
-  line-height: 25px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  background-color: #ec362d;
-  color: #fff5f4;
-  width: 352.82px;
+.criar-perguntas > button{
+  width: 355px;
   height: 54px;
-  border: none;
   border-radius: 15px;
-  margin-top: 110px;
+  background-color: red;
+  font-size: 21px;
+  color:#FFF5F4 ;
+  border: none;
+  margin-bottom: 50px;
 }
-
-.proseguir-criar-niveis:hover {
+.criar-perguntas > button:hover{
   cursor: pointer;
 }
-
 /* tela 10 */
 .decisao-dos-niveis,
 .quis-pronto {
