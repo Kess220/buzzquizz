@@ -123,21 +123,10 @@ function gerarPergunta() {
       );
     }
   }, 30000); // 30 segundos em milissegundos
-} // 10 segundos em milissegundos
-
-// fazer um loop para criar tantas perguntas que o cliente desejá
-
-// Buscando Info para colocar no OBJCT
-
-// let answers = []
-
-// for (let i = 1; i <= 5; i++) {
-//   let perguntaCorreta = i == 1
-//   let answer = {
-//     text: texto1,
-//     image: corPerg1,
-//     perguntaCorreta: perguntaCorreta
-//   }
-//   answers.push(answer)
-// }
-// console.log(answers)
+} 
+function gerarNiveis(){
+  const criarPerguntas = document.querySelector('.criar-perguntas')
+  const decisaoDosNiveis = document.querySelector('.decisao-dos-niveis')
+  criarPerguntas.classList.add('invisivel')
+  decisaoDosNiveis.classList.remove('invisivel')
+}
