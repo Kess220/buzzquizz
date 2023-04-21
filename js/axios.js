@@ -130,18 +130,18 @@ function gerarPergunta() {
     criarPergunta.innerHTML += `
     <div class="perguntas">
           <p  class="pergunta">Pergunta ${i}</p>
-          <input type="text" placeholder="Texto da pergunta">
-          <input type="text" placeholder="Cor de fundo da pergunta">
+          <input id="textoPergunta${i}" type="text" placeholder="Texto da pergunta">
+          <input id="CorPergunta${i}" type="text" placeholder="Cor de fundo da pergunta">
           <p class="respostaCorreta">Resposta Correta</p>
-          <input type="text" placeholder="Resposta correta">
-          <input type="url " placeholder="URL da imagem">
+          <input id="respostaCorreta${i}" type="text" placeholder="Resposta correta">
+          <input id="cachorroMijando${i}" type="url " placeholder="URL da imagem">
           <p class="respostaIncorreta">Respostas incorretas</p>
-          <input type="text" placeholder="Resposta incorreta 1">
-          <input type="url" placeholder="URL da imagem 1">
-          <input type="text" placeholder="Resposta incorreta 2">
-          <input type="url " placeholder="URL da imagem 2">
-          <input type="text" placeholder="Resposta incorreta 3">
-          <input type="url" placeholder="URL da imagem 3">
+          <input id="primeiraRespostaIncorreta${i}" type="text" placeholder="Resposta incorreta 1">
+          <input id="urlPrimeiraRespostaIncorreta${i}" type="url" placeholder="URL da imagem 1">
+          <input id="segundaRespostaIncorreta${i}" type="text" placeholder="Resposta incorreta 2">
+          <input id="urlSegundaRespostaIncorreta${i}" type="url " placeholder="URL da imagem 2">
+          <input  id="terceiraRespostaIncorreta${i}" type="text" placeholder="Resposta incorreta 3">
+          <input id="urlTerceiraRespostaIncorreta${i}" type="url" placeholder="URL da imagem 3">
     </div>
     
     
