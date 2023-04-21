@@ -46,6 +46,9 @@ function buscarInfo() {
   }
 }
 function gerarPergunta() {
+  const title = document.getElementById("title").value;
+  const urlImg = document.getElementById("urlImg").value;
+
   // pega elemento
   const paginaCriancaoQuiz = document.querySelector(".paginaCriancaoQuiz");
   paginaCriancaoQuiz.classList.add("invisivel");
@@ -121,6 +124,8 @@ function gerarPergunta() {
         terceiraRespostaIncorreta,
         urlTerceiraRespostaIncorreta
       );
+
+      console.log(obj);
     }
   }, 30000); // 30 segundos em milissegundos
 } // 10 segundos em milissegundos
