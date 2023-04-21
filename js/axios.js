@@ -1,5 +1,4 @@
 axios.defaults.headers.common["Authorization"] = "mIsztIcWVzidlM4aidMUviCe";
-
 // Buscar Quizz
 function buscarQuizz() {
   axios
@@ -45,76 +44,6 @@ function buscarInfo() {
   if (numPerg > 4) {
     alert("esse numero é muito alto");
   }
-
-  console.log(title, urlImg, numPerg, level);
-  obj = {
-    title: title,
-    image: urlImg,
-    questions: [
-      {
-        title: "Título da pergunta 1",
-        color: "#123456",
-        answers: [
-          {
-            text: "Texto da resposta 1",
-            image: "https://http.cat/411.jpg",
-            isCorrectAnswer: true,
-          },
-          {
-            text: "Texto da resposta 2",
-            image: "https://http.cat/412.jpg",
-            isCorrectAnswer: false,
-          },
-        ],
-      },
-      {
-        title: "Título da pergunta 2",
-        color: "#123456",
-        answers: [
-          {
-            text: "Texto da resposta 1",
-            image: "https://http.cat/411.jpg",
-            isCorrectAnswer: true,
-          },
-          {
-            text: "Texto da resposta 2",
-            image: "https://http.cat/412.jpg",
-            isCorrectAnswer: false,
-          },
-        ],
-      },
-      {
-        title: "Título da pergunta 3",
-        color: "#123456",
-        answers: [
-          {
-            text: "Texto da resposta 1",
-            image: "https://http.cat/411.jpg",
-            isCorrectAnswer: true,
-          },
-          {
-            text: "Texto da resposta 2",
-            image: "https://http.cat/412.jpg",
-            isCorrectAnswer: false,
-          },
-        ],
-      },
-    ],
-    levels: [
-      {
-        title: "Título do nível 1",
-        image: "https://http.cat/411.jpg",
-        text: "Descrição do nível 1",
-        minValue: 0,
-      },
-      {
-        title: "Título do nível 2",
-        image: "https://http.cat/412.jpg",
-        text: "Descrição do nível 2",
-        minValue: 50,
-      },
-    ],
-  };
 }
 function gerarPergunta() {
   // pega elemento
@@ -124,6 +53,7 @@ function gerarPergunta() {
   criarPerguntas.classList.remove("invisivel");
   const numPerg = document.getElementById("numPerg").value;
   //pega a quantidade
+
   for (let i = 1; i <= numPerg; i++) {
     const criarPergunta = document.querySelector(".criar-pergunta");
     // pega a div que embloba tudo
@@ -148,12 +78,56 @@ function gerarPergunta() {
     
     
     `;
-    // renderizar o html
   }
-  // fazer um loop para criar tantas perguntas que o cliente desejá
 
-  // Buscando Info para colocar no OBJCT
-}
+  setInterval(() => {
+    for (let j = 1; j <= numPerg; j++) {
+      const textoPergunta = document.getElementById(`textoPergunta${j}`).value;
+      const corPergunta = document.getElementById(`CorPergunta${j}`).value;
+      const respostaCorreta = document.getElementById(
+        `respostaCorreta${j}`
+      ).value;
+      const cachorroMijando = document.getElementById(
+        `cachorroMijando${j}`
+      ).value;
+      const primeiraRespostaIncorreta = document.getElementById(
+        `primeiraRespostaIncorreta${j}`
+      ).value;
+      const urlPrimeiraRespostaIncorreta = document.getElementById(
+        `urlPrimeiraRespostaIncorreta${j}`
+      ).value;
+      const segundaRespostaIncorreta = document.getElementById(
+        `segundaRespostaIncorreta${j}`
+      ).value;
+      const urlSegundaRespostaIncorreta = document.getElementById(
+        `urlSegundaRespostaIncorreta${j}`
+      ).value;
+      const terceiraRespostaIncorreta = document.getElementById(
+        `terceiraRespostaIncorreta${j}`
+      ).value;
+      const urlTerceiraRespostaIncorreta = document.getElementById(
+        `urlTerceiraRespostaIncorreta${j}`
+      ).value;
+
+      console.log(
+        textoPergunta,
+        corPergunta,
+        respostaCorreta,
+        cachorroMijando,
+        primeiraRespostaIncorreta,
+        urlPrimeiraRespostaIncorreta,
+        segundaRespostaIncorreta,
+        urlSegundaRespostaIncorreta,
+        terceiraRespostaIncorreta,
+        urlTerceiraRespostaIncorreta
+      );
+    }
+  }, 30000); // 30 segundos em milissegundos
+} // 10 segundos em milissegundos
+
+// fazer um loop para criar tantas perguntas que o cliente desejá
+
+// Buscando Info para colocar no OBJCT
 
 // let answers = []
 
