@@ -118,7 +118,10 @@ function buscarInfo() {
 }
 function gerarPergunta() {
   // pega elemento
-
+  const paginaCriancaoQuiz = document.querySelector('.paginaCriancaoQuiz')
+  paginaCriancaoQuiz.classList.add('invisivel')
+  const criarPerguntas = document.querySelector('.criar-perguntas')
+  criarPerguntas.classList.remove('invisivel')
   const numPerg = document.getElementById('numPerg').value
   //pega a quantidade
   for (let i = 1; i <= numPerg; i++) {
