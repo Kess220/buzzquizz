@@ -189,18 +189,18 @@ header > p {
 }
 
 /*CSS TELA 9-DESKTOP FLAVIA*/
-.criar-perguntas{
+.criar-perguntas {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.criar-perguntas > h2{
+.criar-perguntas > h2 {
   font-size: 23px;
   font-weight: bold;
   margin-top: 63px;
   margin-bottom: 36px;
 }
-.perguntas{
+.perguntas {
   display: flex;
   flex-direction: column;
   width: 600px;
@@ -208,55 +208,58 @@ header > p {
   background-color: #ffffff;
   padding-left: 17px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
-  margin-bottom: 50px ;
+  margin-bottom: 50px;
 }
 .perguntas > p {
   font-size: 20px;
   font-weight: bold;
 }
-.pergunta{
+.pergunta {
   margin-top: 27px;
   margin-bottom: 12px;
 }
-.respostaCorreta{
-  margin-top: 28px ;
-  margin-bottom: 24px ;
-
+.respostaCorreta {
+  margin-top: 28px;
+  margin-bottom: 24px;
 }
-.respostaIncorreta{
+.respostaIncorreta {
   margin-top: 28px;
   margin-bottom: 14px;
 }
 
-.perguntas > input{
+.perguntas > input {
   width: 564px;
   height: 46px;
   border-radius: 5px;
-  border: 1px solid #D1D1D1;
+  border: 1px solid #d1d1d1;
   padding: 23px;
 }
 .perguntas > input::placeholder {
   font-size: 19px;
   font-style: italic;
-
 }
-.perguntas > input:nth-child(2),input:nth-child(5), input:nth-child(8), input:nth-child(10), input:nth-child(12){
+.perguntas > input:nth-child(2),
+input:nth-child(5),
+input:nth-child(8),
+input:nth-child(10),
+input:nth-child(12) {
   margin-bottom: 14px;
 }
-.perguntas > input:nth-child(9), input:nth-child(11){
+.perguntas > input:nth-child(9),
+input:nth-child(11) {
   margin-bottom: 32px;
 }
-.criar-perguntas > button{
+.criar-perguntas > button {
   width: 355px;
   height: 54px;
   border-radius: 15px;
   background-color: red;
   font-size: 21px;
-  color:#FFF5F4 ;
+  color: #fff5f4;
   border: none;
   margin-bottom: 50px;
 }
-.criar-perguntas > button:hover{
+.criar-perguntas > button:hover {
   cursor: pointer;
 }
 /* tela 10 */
@@ -273,44 +276,47 @@ header > p {
   height: 316px;
   background: #ffffff;
   border-radius: 5px;
-  border: 1px solid #d1d1d1;
   padding-left: 16px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
 }
-
-.input-nivel {
-  padding: 16px;
+.decisao-dos-niveis > h2 {
+  font-size: 23px;
+  margin-top: 63px;
+  margin-bottom: 43px;
+  font-weight: bold;
 }
-
-.criar-niveis {
-  border: 1px solid #a49e9e;
-  background: #ffffff;
+.segura-nivel > p {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 12px;
+  margin-top: 27px;
+}
+.segura-nivel > input {
+  width: 564px;
+  height: 46px;
+  padding-left: 23px;
+  margin-bottom: 14px;
   border: 1px solid #d1d1d1;
-  width: 600px;
-  height: 74px;
-  margin-top: 30px;
   border-radius: 5px;
-  padding-left: 16px;
-  padding-right: 16px;
+  font-size: 19px;
 }
-
-.criar-nivel {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.segura-nivel > input::placeholder {
+  font-style: italic;
+  color: #bababa;
 }
-
-.finalizar-quizz {
-  background: #ec362d;
-  border-radius: 15px;
-  width: 324px;
+.decisao-dos-niveis > button{
+  width: 325px;
   height: 54px;
+  border-radius: 15px;
   border: none;
-  color: #fff5f4;
+  background: #EC362D;
   font-size: 21px;
-  margin-top: 50px;
-  margin-bottom: 50px;
+  color: #FFF5F4;
+  margin-top: 75px;
 }
-
+.decisao-dos-niveis > button:hover{
+  cursor: pointer;
+}
 /* tela 11 */
 .titulo-img {
   color: white;
