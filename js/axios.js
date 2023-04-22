@@ -56,6 +56,11 @@ function gerarPergunta() {
     alert("O número de levels tem que ser maior ou igual a 2");
     document.getElementById("level").value = "";
   } else {
+    imgArray = JSON.parse(localStorage.getItem("imgArray")) || [];
+    imgArray.push(urlImg);
+    localStorage.setItem("imgArray", JSON.stringify(imgArray));
+    console.log(storedImgArray);
+
     // pega elemento
     const paginaCriancaoQuiz = document.querySelector(".paginaCriancaoQuiz");
     paginaCriancaoQuiz.classList.add("invisivel");
@@ -182,16 +187,13 @@ formLevels.addEventListener("submit", (e) => {
 
       idArray = JSON.parse(localStorage.getItem("idArray")) || [];
       titleArray = JSON.parse(localStorage.getItem("titleArray")) || [];
-      imgArray = JSON.parse(localStorage.getItem("imgArray")) || [];
 
       idArray.push(id);
       titleArray.push(title);
-      imgArray.push(img);
 
       // Armazena os arrays atualizados no localStorage
       localStorage.setItem("idArray", JSON.stringify(idArray));
       localStorage.setItem("titleArray", JSON.stringify(titleArray));
-      localStorage.setItem("imgArray", JSON.stringify(imgArray));
 
       console.log(storedIdArray);
     })
@@ -202,17 +204,14 @@ formLevels.addEventListener("submit", (e) => {
 
   const decisaoDosNiveis = document.querySelector(".decisao-dos-niveis");
   const quisPronto = document.querySelector(".quis-pronto");
-  const img = document.querySelector(".img");
 
   decisaoDosNiveis.classList.add("invisivel");
   quisPronto.classList.remove("invisivel");
 
+  const img = document.querySelector(".img");
   img.innerHTML += `
-    
-        <img class="foto-img" src="./img/castelo.svg" />
-        <p class="titulo-img">O quão Potterhead é você?</p>
-    
-
-    
-    `;
+    <img class="foto-img" src="" />
+    <p class="titulo-img">O quão Potterhead é você?</p>
+  `;
 });
+length;
