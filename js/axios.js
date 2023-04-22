@@ -1,70 +1,71 @@
-axios.defaults.headers.common['Authorization'] = 'mIsztIcWVzidlM4aidMUviCe'
+axios.defaults.headers.common["Authorization"] = "mIsztIcWVzidlM4aidMUviCe";
 // Buscar Quizz
 function buscarQuizz() {
   axios
-    .get('https://mock-api.driven.com.br/api/vm/buzzquizz/quizzes')
-    .then(response => {
-      console.log(response.data)
+    .get("https://mock-api.driven.com.br/api/vm/buzzquizz/quizzes")
+    .then((response) => {
+      console.log(response.data);
     })
-    .catch(error => {
-      console.error(error)
-    })
+    .catch((error) => {
+      console.error(error);
+    });
 }
 
-buscarQuizz()
+buscarQuizz();
 
 // Buscar Quizz por ID
 
 function buscarQuizzID(ID) {
   axios
     .get(`https://mock-api.driven.com.br/api/vm/buzzquizz/quizzes/${ID}`)
-    .then(response => {
-      console.log(response.data)
+    .then((response) => {
+      console.log(response.data);
     })
-    .catch(error => {
-      console.log(error)
-    })
+    .catch((error) => {
+      console.log(error);
+    });
 }
-buscarQuizzID(2)
+buscarQuizzID(2);
 
 let quizzNovo = axios
-  .get('https://mock-api.driven.com.br/api/vm/buzzquizz/quizzes')
-  .then(response => {
-    console.log(response.data)
+  .get("https://mock-api.driven.com.br/api/vm/buzzquizz/quizzes")
+  .then((response) => {
+    console.log(response.data);
   })
-  .catch(error => {
-    console.log(error)
-  })
+  .catch((error) => {
+    console.log(error);
+  });
 
 function buscarInfo() {
-  const title = document.getElementById('title').value
-  const urlImg = document.getElementById('urlImg').value
-  const numPerg = document.getElementById('numPerg').value
-  const level = document.getElementById('level').value
+  const title = document.getElementById("title").value;
+  const urlImg = document.getElementById("urlImg").value;
+  const numPerg = document.getElementById("numPerg").value;
+  const level = document.getElementById("level").value;
   if (numPerg > 4) {
-    alert('esse numero é muito alto')
+    alert("esse numero é muito alto");
   }
 }
-let title
-let urlImg
-let obj
-let numPerg
-let objFinal
+let title;
+let urlImg;
+let obj;
+let numPerg;
+let objFinal;
+let level;
 
 function gerarPergunta() {
-  title = document.getElementById('title').value
-  urlImg = document.getElementById('urlImg').value
+  title = document.getElementById("title").value;
+  urlImg = document.getElementById("urlImg").value;
 
   // pega elemento
-  const paginaCriancaoQuiz = document.querySelector('.paginaCriancaoQuiz')
-  paginaCriancaoQuiz.classList.add('invisivel')
-  const criarPerguntas = document.querySelector('.criar-perguntas')
-  criarPerguntas.classList.remove('invisivel')
-  numPerg = document.getElementById('numPerg').value
+  const paginaCriancaoQuiz = document.querySelector(".paginaCriancaoQuiz");
+  paginaCriancaoQuiz.classList.add("invisivel");
+  const criarPerguntas = document.querySelector(".criar-perguntas");
+  criarPerguntas.classList.remove("invisivel");
+  numPerg = document.getElementById("numPerg").value;
   //pega a quantidade
 
   for (let i = 1; i <= numPerg; i++) {
-    const criarPergunta = document.querySelector('.criar-pergunta')
+    const criarPergunta = document.querySelector(".criar-pergunta");
     // pega a div que embloba tudo
     criarPergunta.innerHTML += `
     <div class="perguntas">
@@ -86,78 +87,62 @@ function gerarPergunta() {
     
     
     
-    `
+    `;
   }
 }
 
-const algumaCoisa = document.getElementById('form')
-algumaCoisa.addEventListener('submit', e => {
-  e.preventDefault()
-  const formData = {}
-  Array.from(e.currentTarget.elements).map(item => {
-    if (!item.name) return null
-    formData[item.name] = item.value
-  })
+const algumaCoisa = document.getElementById("form");
+algumaCoisa.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const formData = {};
+  Array.from(e.currentTarget.elements).map((item) => {
+    if (!item.name) return null;
+    formData[item.name] = item.value;
+  });
 
-  // const objFinal = {
-  //   ...obj,
-  //   levels: [
-  //     {
-  //       title: "Título do nível 1",
-  //       image: "https://http.cat/411.jpg",
-  //       text: "Descrição do nível 1",
-  //       minValue: 0,
-  //     },
-  //     {
-  //       title: "Título do nível 2",
-  //       image: "https://http.cat/412.jpg",
-  //       text: "Descrição do nível 2",
-  //       minValue: 50,
-  //     },
-  //   ],
-  // };
   obj = {
     title: title,
     image: urlImg,
-    questions: Array.from(Array(parseInt(numPerg)).keys()).map(value => ({
+    questions: Array.from(Array(parseInt(numPerg)).keys()).map((value) => ({
       title: formData[`title_${value + 1}`],
       color: formData[`color_${value + 1}`],
       answers: [
         {
           text: formData[`text_T_${value + 1}`],
           image: formData[`image_T_${value + 1}`],
-          isCorrectAnswer: true
+          isCorrectAnswer: true,
         },
         {
           text: formData[`text1_${value + 1}`],
           image: formData[`image1_${value + 1}`],
-          isCorrectAnswer: false
+          isCorrectAnswer: false,
         },
         {
           text: formData[`text2_${value + 1}`],
           image: formData[`image2_${value + 1}`],
-          isCorrectAnswer: false
+          isCorrectAnswer: false,
         },
         {
           text: formData[`text3_${value + 1}`],
           image: formData[`image3_${value + 1}`],
-          isCorrectAnswer: false
-        }
-      ]
-    }))
-  }
-  console.log(obj)
-})
+          isCorrectAnswer: false,
+        },
+      ],
+    })),
+  };
+  console.log(obj);
+});
+
 function gerarLevels() {
-  const criarPerguntas = document.querySelector('.criar-perguntas')
-  const decisaoDosNiveis = document.querySelector('.decisao-dos-niveis')
-  criarPerguntas.classList.add('invisivel')
-  decisaoDosNiveis.classList.remove('invisivel')
-  const level = document.getElementById('level').value
-  console.log(level)
+  const criarPerguntas = document.querySelector(".criar-perguntas");
+  const decisaoDosNiveis = document.querySelector(".decisao-dos-niveis");
+  criarPerguntas.classList.add("invisivel");
+  decisaoDosNiveis.classList.remove("invisivel");
+  const level = document.getElementById("level").value;
+  console.log(level);
   // preciso gerar esse elemento quantas vezes for necessario
   for (let i = 1; i <= level; i++) {
-    const gerarNiveis = document.querySelector('.gerarNiveis')
+    const gerarNiveis = document.querySelector(".gerarNiveis");
     gerarNiveis.innerHTML += `
     <div class="segura-nivel">
         <p>Nível ${i}</p>
@@ -166,6 +151,40 @@ function gerarLevels() {
         <input type="url" placeholder="URL da imagem do nível" name='urlImagem${i}' >
         <input type="text" placeholder="Descrição do nível" name='descricaoNivel${i}'>
     </div>
-    `
+    `;
   }
 }
+
+// Levels OBJ
+
+const formLevels = document.getElementById("form-levels");
+formLevels.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const formDataLevels = {};
+  const level = document.getElementById("level").value;
+  Array.from(e.currentTarget.elements).map((item) => {
+    if (!item.name) return null;
+    formDataLevels[item.name] = item.value;
+  });
+  const objFinal = {
+    ...obj,
+    levels: Array.from(Array(parseInt(level)).keys()).map((value) => ({
+      title: formDataLevels[`tituloNivel${value + 1}`],
+      image: formDataLevels[`urlImagem${value + 1}`],
+      text: formDataLevels[`descricaoNivel${value + 1}`],
+      minValue: formDataLevels[`porcentagemAcertos${value + 1}`],
+    })),
+  };
+  console.log(objFinal);
+});
+
+// function enviarQuizz() {
+//   axios
+//     .post("https://mock-api.driven.com.br/api/vm/buzzquizz/quizzes", objFinal)
+//     .then((response) => {
+//       console.log(response.data);
+//     })
+//     .catch((error) => {
+//       console.error(error);
+//     });
+// }
