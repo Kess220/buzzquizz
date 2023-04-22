@@ -174,4 +174,17 @@ formLevels.addEventListener("submit", (e) => {
     .catch((error) => {
       console.error(error);
     });
+  const criarPerguntas = document.querySelector(".criar-perguntas");
+  const quisPronto = documment.querySelector(".quis-pronto");
+  criarPerguntas.classList.add("invisivel");
+  quisPronto.classList.remove("invisivel");
+
+  quisPronto.innerHTML += `
+    <div class="img">
+        <img class="foto-img" src="./img/castelo.svg" />
+        <p class="titulo-img">O quão Potterhead é você?</p>
+    </div>
+
+    
+    `;
 });
