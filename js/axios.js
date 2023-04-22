@@ -36,6 +36,14 @@ let objFinal;
 let obj;
 let objLevel;
 let level;
+let idArray = [];
+let titleArray = [];
+let imgArray = [];
+// Recupera os arrays armazenados no localStorage (se existirem)
+let storedIdArray = JSON.parse(localStorage.getItem("idArray")) || [];
+let storedTitleArray = JSON.parse(localStorage.getItem("titleArray")) || [];
+let storedImgArray = JSON.parse(localStorage.getItem("imgArray")) || [];
+
 function gerarPergunta() {
   title = document.getElementById("title").value;
   urlImg = document.getElementById("urlImg").value;
@@ -168,12 +176,30 @@ formLevels.addEventListener("submit", (e) => {
   axios
     .post("https://mock-api.driven.com.br/api/vm/buzzquizz/quizzes", objFinal)
     .then((response) => {
-      console.log(response.data);
-      console.log(response.data.id);
+      let id = response.data.id;
+      let title = response.data.title;
+      let img = response.data.image;
+
+      idArray = JSON.parse(localStorage.getItem("idArray")) || [];
+      titleArray = JSON.parse(localStorage.getItem("titleArray")) || [];
+      imgArray = JSON.parse(localStorage.getItem("imgArray")) || [];
+
+      idArray.push(id);
+      titleArray.push(title);
+      imgArray.push(img);
+
+      // Armazena os arrays atualizados no localStorage
+      localStorage.setItem("idArray", JSON.stringify(idArray));
+      localStorage.setItem("titleArray", JSON.stringify(titleArray));
+      localStorage.setItem("imgArray", JSON.stringify(imgArray));
+
+      console.log(storedIdArray);
     })
     .catch((error) => {
       console.error(error);
     });
+  // Armazena os arrays atualizados no localStorage
+
   const decisaoDosNiveis = document.querySelector(".decisao-dos-niveis");
   const quisPronto = document.querySelector(".quis-pronto");
   const img = document.querySelector(".img");
