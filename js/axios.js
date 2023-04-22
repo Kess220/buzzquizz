@@ -41,9 +41,11 @@ function gerarPergunta() {
   urlImg = document.getElementById("urlImg").value;
   numPerg = document.getElementById("numPerg").value;
   level = document.getElementById("level").value;
-  if (numPerg < 3 && level < 2) {
-    alert("Please enter");
+  if (numPerg < 3) {
+    alert("O número de perguntas deve ser maior ou igual a 3 ");
     document.getElementById("numPerg").value = "";
+  } else if (level < 2) {
+    alert("O número de levels tem que ser maior ou igual a 2");
     document.getElementById("level").value = "";
   } else {
     // pega elemento
