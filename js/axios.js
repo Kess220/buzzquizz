@@ -165,11 +165,11 @@ formLevels.addEventListener("submit", (e) => {
     })),
   };
   objFinal = { ...obj, ...objLevel };
-  console.log(objFinal);
   axios
     .post("https://mock-api.driven.com.br/api/vm/buzzquizz/quizzes", objFinal)
     .then((response) => {
       console.log(response.data);
+      console.log(response.data.id);
     })
     .catch((error) => {
       console.error(error);
