@@ -1,63 +1,71 @@
-axios.defaults.headers.common["Authorization"] = "mIsztIcWVzidlM4aidMUviCe";
+axios.defaults.headers.common['Authorization'] = 'mIsztIcWVzidlM4aidMUviCe'
 // Buscar Quizz
 function buscarQuizz() {
   axios
-    .get("https://mock-api.driven.com.br/api/vm/buzzquizz/quizzes")
-    .then((response) => {})
-    .catch((error) => {});
+    .get('https://mock-api.driven.com.br/api/vm/buzzquizz/quizzes')
+    .then(response => {})
+    .catch(error => {})
 }
 
-buscarQuizz();
+buscarQuizz()
 
 // Buscar Quizz por ID
 
 function buscarQuizzID(ID) {
   axios
     .get(`https://mock-api.driven.com.br/api/vm/buzzquizz/quizzes/${ID}`)
-    .then((response) => {})
-    .catch((error) => {});
+    .then(response => {})
+    .catch(error => {})
 }
-buscarQuizzID(2);
+buscarQuizzID(2)
 
 let quizzNovo = axios
-  .get("https://mock-api.driven.com.br/api/vm/buzzquizz/quizzes")
-  .then((response) => {})
-  .catch((error) => {});
+  .get('https://mock-api.driven.com.br/api/vm/buzzquizz/quizzes')
+  .then(response => {})
+  .catch(error => {})
 
 function buscarInfo() {
   if (numPerg > 4) {
-    alert("esse numero é muito alto");
+    alert('esse numero é muito alto')
   }
 }
-let title;
-let urlImg;
-let numPerg;
-let objFinal;
-let obj;
-let objLevel;
-let level;
+let title
+let urlImg
+let numPerg
+let objFinal
+let obj
+let objLevel
+let level
+let idArray = []
+let titleArray = []
+let imgArray = []
+// Recupera os arrays armazenados no localStorage (se existirem)
+let storedIdArray = JSON.parse(localStorage.getItem('idArray')) || []
+let storedTitleArray = JSON.parse(localStorage.getItem('titleArray')) || []
+let storedImgArray = JSON.parse(localStorage.getItem('imgArray')) || []
+
 function gerarPergunta() {
-  title = document.getElementById("title").value;
-  urlImg = document.getElementById("urlImg").value;
-  numPerg = document.getElementById("numPerg").value;
-  level = document.getElementById("level").value;
+  title = document.getElementById('title').value
+  urlImg = document.getElementById('urlImg').value
+  numPerg = document.getElementById('numPerg').value
+  level = document.getElementById('level').value
   if (numPerg < 3) {
-    alert("O número de perguntas deve ser maior ou igual a 3 ");
-    document.getElementById("numPerg").value = "";
+    alert('O número de perguntas deve ser maior ou igual a 3 ')
+    document.getElementById('numPerg').value = ''
   } else if (level < 2) {
-    alert("O número de levels tem que ser maior ou igual a 2");
-    document.getElementById("level").value = "";
+    alert('O número de levels tem que ser maior ou igual a 2')
+    document.getElementById('level').value = ''
   } else {
     // pega elemento
-    const paginaCriancaoQuiz = document.querySelector(".paginaCriancaoQuiz");
-    paginaCriancaoQuiz.classList.add("invisivel");
-    const criarPerguntas = document.querySelector(".criar-perguntas");
-    criarPerguntas.classList.remove("invisivel");
-    numPerg = document.getElementById("numPerg").value;
+    const paginaCriancaoQuiz = document.querySelector('.paginaCriancaoQuiz')
+    paginaCriancaoQuiz.classList.add('invisivel')
+    const criarPerguntas = document.querySelector('.criar-perguntas')
+    criarPerguntas.classList.remove('invisivel')
+    numPerg = document.getElementById('numPerg').value
     //pega a quantidade
 
     for (let i = 1; i <= numPerg; i++) {
-      const criarPergunta = document.querySelector(".criar-pergunta");
+      const criarPergunta = document.querySelector('.criar-pergunta')
       // pega a div que embloba tudo
       criarPergunta.innerHTML += `
     <div class="perguntas">
@@ -79,59 +87,59 @@ function gerarPergunta() {
     
     
     
-    `;
+    `
     }
   }
 }
-const algumaCoisa = document.getElementById("form");
-algumaCoisa.addEventListener("submit", (e) => {
-  e.preventDefault();
-  const formData = {};
-  Array.from(e.currentTarget.elements).map((item) => {
-    if (!item.name) return null;
-    formData[item.name] = item.value;
-  });
+const algumaCoisa = document.getElementById('form')
+algumaCoisa.addEventListener('submit', e => {
+  e.preventDefault()
+  const formData = {}
+  Array.from(e.currentTarget.elements).map(item => {
+    if (!item.name) return null
+    formData[item.name] = item.value
+  })
 
   obj = {
     title: title,
     image: urlImg,
-    questions: Array.from(Array(parseInt(numPerg)).keys()).map((value) => ({
+    questions: Array.from(Array(parseInt(numPerg)).keys()).map(value => ({
       title: formData[`title_${value + 1}`],
       color: formData[`color_${value + 1}`],
       answers: [
         {
           text: formData[`text_T_${value + 1}`],
           image: formData[`image_T_${value + 1}`],
-          isCorrectAnswer: true,
+          isCorrectAnswer: true
         },
         {
           text: formData[`text1_${value + 1}`],
           image: formData[`image1_${value + 1}`],
-          isCorrectAnswer: false,
+          isCorrectAnswer: false
         },
         {
           text: formData[`text2_${value + 1}`],
           image: formData[`image2_${value + 1}`],
-          isCorrectAnswer: false,
+          isCorrectAnswer: false
         },
         {
           text: formData[`text3_${value + 1}`],
           image: formData[`image3_${value + 1}`],
-          isCorrectAnswer: false,
-        },
-      ],
-    })),
-  };
-  console.log(obj);
+          isCorrectAnswer: false
+        }
+      ]
+    }))
+  }
+  console.log(obj)
 
-  const criarPerguntas = document.querySelector(".criar-perguntas");
-  const decisaoDosNiveis = document.querySelector(".decisao-dos-niveis");
-  criarPerguntas.classList.add("invisivel");
-  decisaoDosNiveis.classList.remove("invisivel");
-  const level = document.getElementById("level").value;
+  const criarPerguntas = document.querySelector('.criar-perguntas')
+  const decisaoDosNiveis = document.querySelector('.decisao-dos-niveis')
+  criarPerguntas.classList.add('invisivel')
+  decisaoDosNiveis.classList.remove('invisivel')
+  const level = document.getElementById('level').value
   // preciso gerar esse elemento quantas vezes for necessario
   for (let i = 1; i <= level; i++) {
-    const gerarNiveis = document.querySelector(".gerarNiveis");
+    const gerarNiveis = document.querySelector('.gerarNiveis')
     gerarNiveis.innerHTML += `
     <div class="segura-nivel">
         <p>Nível ${i}</p>
@@ -140,50 +148,73 @@ algumaCoisa.addEventListener("submit", (e) => {
         <input type="url" placeholder="URL da imagem do nível" name='urlImagem${i}' >
         <input type="text" placeholder="Descrição do nível" name='descricaoNivel${i}'>
     </div>
-    `;
+    `
   }
-});
+})
 function gerarLevels() {}
 
 // Levels OBJ
 
-const formLevels = document.getElementById("form-levels");
-formLevels.addEventListener("submit", (e) => {
-  e.preventDefault();
-  const formDataLevels = {};
-  const level = document.getElementById("level").value;
-  Array.from(e.currentTarget.elements).map((item) => {
-    if (!item.name) return null;
-    formDataLevels[item.name] = item.value;
-  });
+const formLevels = document.getElementById('form-levels')
+formLevels.addEventListener('submit', e => {
+  e.preventDefault()
+  const formDataLevels = {}
+  const level = document.getElementById('level').value
+  Array.from(e.currentTarget.elements).map(item => {
+    if (!item.name) return null
+    formDataLevels[item.name] = item.value
+  })
   objLevel = {
-    levels: Array.from(Array(parseInt(level)).keys()).map((value) => ({
+    levels: Array.from(Array(parseInt(level)).keys()).map(value => ({
       title: formDataLevels[`tituloNivel${value + 1}`],
       image: formDataLevels[`urlImagem${value + 1}`],
       text: formDataLevels[`descricaoNivel${value + 1}`],
-      minValue: parseInt(formDataLevels[`porcentagemAcertos${value + 1}`]),
-    })),
-  };
-  objFinal = { ...obj, ...objLevel };
+      minValue: parseInt(formDataLevels[`porcentagemAcertos${value + 1}`])
+    }))
+  }
+  objFinal = { ...obj, ...objLevel }
   axios
-    .post("https://mock-api.driven.com.br/api/vm/buzzquizz/quizzes", objFinal)
-    .then((response) => {
-      console.log(response.data);
-      console.log(response.data.id);
+    .post('https://mock-api.driven.com.br/api/vm/buzzquizz/quizzes', objFinal)
+    .then(response => {
+      let id = response.data.id
+      let title = response.data.title
+      let img = response.data.image
+
+      idArray = JSON.parse(localStorage.getItem('idArray')) || []
+      titleArray = JSON.parse(localStorage.getItem('titleArray')) || []
+      imgArray = JSON.parse(localStorage.getItem('imgArray')) || []
+
+      idArray.push(id)
+      titleArray.push(title)
+      imgArray.push(img)
+
+      // Armazena os arrays atualizados no localStorage
+      localStorage.setItem('idArray', JSON.stringify(idArray))
+      localStorage.setItem('titleArray', JSON.stringify(titleArray))
+      localStorage.setItem('imgArray', JSON.stringify(imgArray))
+
+      console.log(storedIdArray)
     })
     .catch(error => {
       console.error(error)
     })
+  // Armazena os arrays atualizados no localStorage
+
   const decisaoDosNiveis = document.querySelector('.decisao-dos-niveis')
   const quisPronto = document.querySelector('.quis-pronto')
   const img = document.querySelector('.img')
-
   decisaoDosNiveis.classList.add('invisivel')
   quisPronto.classList.remove('invisivel')
-
+  const storageImgArray = localStorage.getItem('imgArray')
+  const arrayUltimaImg =  JSON.parse(storageImgArray)
+  const ultimaImg = arrayUltimaImg[arrayUltimaImg.length - 1 ]
+  console.log(`teste ${ultimaImg}`)
   img.innerHTML += `
     
-        <img class="foto-img" src="./img/castelo.svg" />
+        <img class="foto-img" src='${ultimaImg}' />
         <p class="titulo-img">O quão Potterhead é você?</p>
+    
+
+    
     `
 })

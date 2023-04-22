@@ -331,8 +331,9 @@ textarea:focus {
 }
 
 .foto-img {
-  bottom: 25px;
-  left: 25px;
+  width: 500px;
+  height: 266px;
+  border-radius: 5px;
 }
 
 .img {
