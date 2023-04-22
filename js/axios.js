@@ -175,7 +175,7 @@ formLevels.addEventListener("submit", (e) => {
       console.error(error);
     });
   const criarPerguntas = document.querySelector(".criar-perguntas");
-  const quisPronto = documment.querySelector(".quis-pronto");
+  const quisPronto = document.querySelector(".quis-pronto");
   criarPerguntas.classList.add("invisivel");
   quisPronto.classList.remove("invisivel");
 
