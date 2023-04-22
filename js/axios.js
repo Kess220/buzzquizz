@@ -89,12 +89,6 @@ function gerarPergunta() {
     `
   }
 }
-function gerarNiveis() {
-  const criarPerguntas = document.querySelector('.criar-perguntas')
-  const decisaoDosNiveis = document.querySelector('.decisao-dos-niveis')
-  criarPerguntas.classList.add('invisivel')
-  decisaoDosNiveis.classList.remove('invisivel')
-}
 
 const algumaCoisa = document.getElementById('form')
 algumaCoisa.addEventListener('submit', e => {
@@ -154,3 +148,24 @@ algumaCoisa.addEventListener('submit', e => {
   }
   console.log(obj)
 })
+function gerarLevels() {
+  const criarPerguntas = document.querySelector('.criar-perguntas')
+  const decisaoDosNiveis = document.querySelector('.decisao-dos-niveis')
+  criarPerguntas.classList.add('invisivel')
+  decisaoDosNiveis.classList.remove('invisivel')
+  const level = document.getElementById('level').value
+  console.log(level)
+  // preciso gerar esse elemento quantas vezes for necessario
+  for (let i = 1; i <= level; i++) {
+    const gerarNiveis = document.querySelector('.gerarNiveis')
+    gerarNiveis.innerHTML += `
+    <div class="segura-nivel">
+        <p>Nível ${i}</p>
+        <input id='tituloNivel' type="text" placeholder="Título do nível" name='tituloNivel${i}' >
+        <input type="text" placeholder="% de acerto mínima" name='porcentagemAcertos${i}' >
+        <input type="url" placeholder="URL da imagem do nível" name='urlImagem${i}' >
+        <input type="text" placeholder="Descrição do nível" name='descricaoNivel${i}'>
+    </div>
+    `
+  }
+}
