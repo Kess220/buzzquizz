@@ -1,125 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Document</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
-    rel="stylesheet" />
-  <link rel="stylesheet" href="./css/reset.css" />
-  <link rel="stylesheet" href="./css/style.css" />
-  <title>Document</title>
-</head>
-
-<body>
-  <header>
-    <p>BuzzQuizz</p>
-  </header>
-  <main>
-    <section class="paginaInicial ">
-      <div class="criacaoQuizz">
-        <p>Você não criou nenhum quizz ainda :</p>
-        <button onclick="criarQuizz()">Criar Quizz</button>
-      </div>
-      <div class="todosOsQuizzes">
-        <p>Todos os Quizzes</p>
-        <div>
-          <div class="quizzes">
-            <img src="./img/simpson.png" alt="" />
-            <div>
-              <p>Quanto da sua personalidade é igual de um gato?</p>
+  <body>
+    <header>
+      <p>BuzzQuizz</p>
+    </header>
+    <main>
+      <section class="paginaInicial">
+        <div class="criacaoQuizz">
+          <p>Você não criou nenhum quizz ainda :</p>
+          <button onclick="criarQuizz()">Criar Quizz</button>
+        </div>
+        <div class="todosOsQuizzes">
+          <p>Todos os Quizzes</p>
+          <div>
+            <div class="quizzes">
+              <img src="./img/simpson.png" alt="" />
+              <div>
+                <p>Quanto da sua personalidade é igual de um gato?</p>
+              </div>
             </div>
-          </div>
-          <div class="quizzes">
-            <img src="./img/simpson.png" alt="" />
-            <div>
-              <p>Quanto da sua personalidade é igual de um gato?</p>
+            <div class="quizzes">
+              <img src="./img/simpson.png" alt="" />
+              <div>
+                <p>Quanto da sua personalidade é igual de um gato?</p>
+              </div>
             </div>
-          </div>
-          <div class="quizzes">
-            <img src="./img/simpson.png" alt="" />
-            <div>
-              <p>Quanto da sua personalidade é igual de um gato?</p>
+            <div class="quizzes">
+              <img src="./img/simpson.png" alt="" />
+              <div>
+                <p>Quanto da sua personalidade é igual de um gato?</p>
+              </div>
             </div>
-          </div>
-          <div class="quizzes">
-            <img src="./img/simpson.png" alt="" />
-            <div>
-              <p>Quanto da sua personalidade é igual de um gato?</p>
+            <div class="quizzes">
+              <img src="./img/simpson.png" alt="" />
+              <div>
+                <p>Quanto da sua personalidade é igual de um gato?</p>
+              </div>
             </div>
-          </div>
-          <div class="quizzes">
-            <img src="./img/simpson.png" alt="" />
-            <div>
-              <p>Quanto da sua personalidade é igual de um gato?</p>
+            <div class="quizzes">
+              <img src="./img/simpson.png" alt="" />
+              <div>
+                <p>Quanto da sua personalidade é igual de um gato?</p>
+              </div>
             </div>
-          </div>
-          <div class="quizzes">
-            <img src="./img/simpson.png" alt="" />
-            <div>
-              <p>Quanto da sua personalidade é igual de um gato?</p>
+            <div class="quizzes">
+              <img src="./img/simpson.png" alt="" />
+              <div>
+                <p>Quanto da sua personalidade é igual de um gato?</p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-    <section class="paginaCriancaoQuiz invisivel">
-      <div>
-        <p>Comece pelo começo</p>
+      </section>
+      <section class="paginaCriancaoQuiz invisivel">
         <div>
-          <input id="title" type="text" placeholder="Título do seu quizz" />
-          <input id="urlImg" type="url" placeholder="URL da imagem do seu quizz" />
-          <input id="numPerg" type="number" placeholder="Quantidade de perguntas do quizz" />
-          <input id="level" type="number" placeholder="Quantidade de níveis do quizz" />
+          <p>Comece pelo começo</p>
+          <div>
+            <input id="title" type="text" placeholder="Título do seu quizz" />
+            <input
+              id="urlImg"
+              type="url"
+              placeholder="URL da imagem do seu quizz"
+            />
+            <input
+              id="numPerg"
+              type="number"
+              placeholder="Quantidade de perguntas do quizz"
+            />
+            <input
+              id="level"
+              type="number"
+              placeholder="Quantidade de níveis do quizz"
+            />
+          </div>
+          <button onclick="gerarPergunta()">
+            Prosseguir pra criar perguntas
+          </button>
         </div>
-        <button  onclick="gerarPergunta()">Prosseguir pra criar perguntas</button>
-      </div>
-    </section>
+      </section>
 
-    <!--TELA 9-DESKTOP FLAVIA-->
-    <section class="criar-perguntas invisivel ">
-      <h2>Crie suas perguntas</h2>
-      <div class="criar-pergunta">
+      <!--TELA 9-DESKTOP FLAVIA-->
+      <section class="criar-perguntas invisivel">
+        <h2>Crie suas perguntas</h2>
+        <div class="criar-pergunta"></div>
+        <button onclick="gerarNiveis()">Prosseguir pra criar níveis</button>
+      </section>
 
-      </div>
-      <button onclick="gerarNiveis()">
-        Prosseguir pra criar níveis
-      </button>
-    </section>
+      <!--TELA 10-DESKTOP FLAVIA-->
+      <form id="from-levels" class="decisao-dos-niveis invisivel">
+        <h2>Agora, decida os níveis</h2>
+        <div class="gerarNiveis"></div>
 
-    <!--TELA 10-DESKTOP FLAVIA-->
-    <section class="decisao-dos-niveis invisivel">
-      <h2>Agora, decida os níveis</h2>
-      <div class="segura-nivel">
-        <p>Nível 1</p>
-          <input type="text" placeholder="Título do nível" >
-          <input type="text" placeholder="% de acerto mínima" >
-          <input type="url" placeholder="URL da imagem do nível" >
-          <input type="text" placeholder="Descrição do nível" ></input>
-      </div>
-      <button>Finalizar Quizz</button>
-    </section>
+        <button>Finalizar Quizz</button>
+      </form>
 
-    <section class="quis-pronto invisivel">
-      <h2>Seu quizz está pronto!</h2>
+      <section class="quis-pronto invisivel">
+        <h2>Seu quizz está pronto!</h2>
 
-      <div class="img">
-        <img class="foto-img" src="./img/castelo.svg">
-        <p class="titulo-img">O quão Potterhead é você?</p>
-      </div>
+        <div class="img">
+          <img class="foto-img" src="./img/castelo.svg" />
+          <p class="titulo-img">O quão Potterhead é você?</p>
+        </div>
 
-      <button class="acessar-quis">Acessar Quizz</button>
-      <button class="volta-home">Voltar para home</button>
-    </section>
-
-
-  </main>
-  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  <script src="./js/script.js"></script>
-  <script src="./js/axios.js"></script>
-</body>
-
+        <button class="acessar-quis">Acessar Quizz</button>
+        <button class="volta-home">Voltar para home</button>
+      </section>
+    </main>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./js/script.js"></script>
+    <script src="./js/axios.js"></script>
+  </body>
 </html>
