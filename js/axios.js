@@ -185,8 +185,5 @@ formLevels.addEventListener("submit", (e) => {
     
         <img class="foto-img" src="./img/castelo.svg" />
         <p class="titulo-img">O quão Potterhead é você?</p>
-    
-
-    
     `
 })
