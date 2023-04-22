@@ -56,6 +56,14 @@ function gerarPergunta() {
     alert('O número de levels tem que ser maior ou igual a 2')
     document.getElementById('level').value = ''
   } else {
+    imgArray = JSON.parse(localStorage.getItem('imgArray')) || []
+    imgArray.push(urlImg)
+    localStorage.setItem('imgArray', JSON.stringify(imgArray))
+    console.log(storedImgArray)
+    titleArray = JSON.parse(localStorage.getItem('imgArray')) || []
+    titleArray.push(title)
+    localStorage.setItem('titleArray', JSON.stringify(titleArray))
+
     // pega elemento
     const paginaCriancaoQuiz = document.querySelector('.paginaCriancaoQuiz')
     paginaCriancaoQuiz.classList.add('invisivel')
@@ -179,20 +187,13 @@ formLevels.addEventListener('submit', e => {
       let id = response.data.id
       let title = response.data.title
       let img = response.data.image
-
       idArray = JSON.parse(localStorage.getItem('idArray')) || []
-      titleArray = JSON.parse(localStorage.getItem('titleArray')) || []
-      imgArray = JSON.parse(localStorage.getItem('imgArray')) || []
 
       idArray.push(id)
-      titleArray.push(title)
-      imgArray.push(img)
-
       // Armazena os arrays atualizados no localStorage
       localStorage.setItem('idArray', JSON.stringify(idArray))
-      localStorage.setItem('titleArray', JSON.stringify(titleArray))
-      localStorage.setItem('imgArray', JSON.stringify(imgArray))
-
+      titleArray = JSON.parse(localStorage.getItem('titleArray')) || []
+      imgArray = JSON.parse(localStorage.getItem('imgArray')) || []
       console.log(storedIdArray)
     })
     .catch(error => {
@@ -206,13 +207,14 @@ formLevels.addEventListener('submit', e => {
   decisaoDosNiveis.classList.add('invisivel')
   quisPronto.classList.remove('invisivel')
   const storageImgArray = localStorage.getItem('imgArray')
-  const arrayUltimaImg =  JSON.parse(storageImgArray)
-  const ultimaImg = arrayUltimaImg[arrayUltimaImg.length - 1 ]
+  const arrayUltimaImg = JSON.parse(storageImgArray)
+  const ultimaImg = arrayUltimaImg[arrayUltimaImg.length - 1]
+
   console.log(`teste ${ultimaImg}`)
   img.innerHTML += `
     
         <img class="foto-img" src='${ultimaImg}' />
-        <p class="titulo-img">O quão Potterhead é você?</p>
+        <p class="titulo-img"></p>
     
 
     

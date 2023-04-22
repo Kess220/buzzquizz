@@ -310,26 +310,43 @@ textarea:focus {
   font-style: italic;
   color: #bababa;
 }
-.decisao-dos-niveis > button{
+.decisao-dos-niveis > button {
   width: 325px;
   height: 54px;
   border-radius: 15px;
   border: none;
-  background: #EC362D;
+  background: #ec362d;
   font-size: 21px;
-  color: #FFF5F4;
+  color: #fff5f4;
   margin-top: 75px;
 }
-.decisao-dos-niveis > button:hover{
+.decisao-dos-niveis > button:hover {
   cursor: pointer;
 }
 /* tela 11 */
 .titulo-img {
   color: white;
-  position: relative;
+  position: absolute;
   bottom: 10px;
+  font-size: 23px;
+  font-weight: 400;
+  margin-left: 23px;
+  bottom: 0;
+  margin-bottom: 23px;
 }
-
+.quis-pronto > div > h2 {
+  font-size: 23px;
+  font-weight: bold;
+  margin-top: 71px;
+  margin-bottom: 46px;
+}
+.quis-pronto > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+}
 .foto-img {
   width: 500px;
   height: 266px;
@@ -344,6 +361,7 @@ textarea:focus {
   color: #fff5f4;
   display: flex;
   align-items: end;
+  position: relative;
 }
 
 .acessar-quis,
