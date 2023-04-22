@@ -156,13 +156,13 @@ header > p {
   margin-bottom: 9px;
   border-radius: 5px;
   border: 1px solid #d1d1d1;
+  padding-left: 23px;
+  font-size: 19px;
 }
 
 .paginaCriancaoQuiz > div > div > input::placeholder {
   font-size: 19px;
-  padding-left: 23px;
   font-style: italic;
-  margin-left: 23px;
 }
 
 .paginaCriancaoQuiz > div > div {
