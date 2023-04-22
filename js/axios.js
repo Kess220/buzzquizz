@@ -25,10 +25,6 @@ let quizzNovo = axios
   .catch((error) => {});
 
 function buscarInfo() {
-  const title = document.getElementById("title").value;
-  const urlImg = document.getElementById("urlImg").value;
-  const numPerg = document.getElementById("numPerg").value;
-  const level = document.getElementById("level").value;
   if (numPerg > 4) {
     alert("esse numero é muito alto");
   }
@@ -43,19 +39,25 @@ let level;
 function gerarPergunta() {
   title = document.getElementById("title").value;
   urlImg = document.getElementById("urlImg").value;
-
-  // pega elemento
-  const paginaCriancaoQuiz = document.querySelector(".paginaCriancaoQuiz");
-  paginaCriancaoQuiz.classList.add("invisivel");
-  const criarPerguntas = document.querySelector(".criar-perguntas");
-  criarPerguntas.classList.remove("invisivel");
   numPerg = document.getElementById("numPerg").value;
-  //pega a quantidade
+  level = document.getElementById("level").value;
+  if (numPerg < 3 && level < 2) {
+    alert("Please enter");
+    document.getElementById("numPerg").value = "";
+    document.getElementById("level").value = "";
+  } else {
+    // pega elemento
+    const paginaCriancaoQuiz = document.querySelector(".paginaCriancaoQuiz");
+    paginaCriancaoQuiz.classList.add("invisivel");
+    const criarPerguntas = document.querySelector(".criar-perguntas");
+    criarPerguntas.classList.remove("invisivel");
+    numPerg = document.getElementById("numPerg").value;
+    //pega a quantidade
 
-  for (let i = 1; i <= numPerg; i++) {
-    const criarPergunta = document.querySelector(".criar-pergunta");
-    // pega a div que embloba tudo
-    criarPergunta.innerHTML += `
+    for (let i = 1; i <= numPerg; i++) {
+      const criarPergunta = document.querySelector(".criar-pergunta");
+      // pega a div que embloba tudo
+      criarPergunta.innerHTML += `
     <div class="perguntas">
           <p  class="pergunta">Pergunta ${i}</p>
           <input id="textoPergunta${i}" type="text" placeholder="Texto da pergunta" name="title_${i}">
@@ -76,6 +78,7 @@ function gerarPergunta() {
     
     
     `;
+    }
   }
 }
 const algumaCoisa = document.getElementById("form");
