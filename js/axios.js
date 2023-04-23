@@ -13,7 +13,7 @@ function meusQuizzes() {
   const titlePronto = JSON.parse(title)
   const imgPronto = JSON.parse(img)
   console.log(img, title)
-  if (localStorage.length > 0) {
+  if(localStorage.length > 0){
     for (let i = 0; i < titlePronto.length && imgPronto.length; i++) {
       const tudoDentro = document.querySelector('.tudoDentro')
       tudoDentro.innerHTML += `
@@ -27,6 +27,7 @@ function meusQuizzes() {
     `
     }
   }
+ 
 }
 meusQuizzes()
 function todosOsQuizzes() {
