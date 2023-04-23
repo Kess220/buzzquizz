@@ -130,7 +130,7 @@ function gerarPergunta() {
     imgArray.push(urlImg);
     localStorage.setItem("imgArray", JSON.stringify(imgArray));
     console.log(storedImgArray);
-    titleArray = JSON.parse(localStorage.getItem("imgArray")) || [];
+    titleArray = JSON.parse(localStorage.getItem("titleArray")) || [];
     titleArray.push(title);
     localStorage.setItem("titleArray", JSON.stringify(titleArray));
 
@@ -255,15 +255,11 @@ formLevels.addEventListener("submit", (e) => {
     .post("https://mock-api.driven.com.br/api/vm/buzzquizz/quizzes", objFinal)
     .then((response) => {
       let id = response.data.id;
-      let title = response.data.title;
-      let img = response.data.image;
       idArray = JSON.parse(localStorage.getItem("idArray")) || [];
 
       idArray.push(id);
       // Armazena os arrays atualizados no localStorage
       localStorage.setItem("idArray", JSON.stringify(idArray));
-      titleArray = JSON.parse(localStorage.getItem("titleArray")) || [];
-      imgArray = JSON.parse(localStorage.getItem("imgArray")) || [];
       console.log(storedIdArray);
     })
     .catch((error) => {
@@ -279,8 +275,11 @@ formLevels.addEventListener("submit", (e) => {
   const storageImgArray = localStorage.getItem("imgArray");
   const arrayUltimaImg = JSON.parse(storageImgArray);
   const ultimaImg = arrayUltimaImg[arrayUltimaImg.length - 1];
-
-  console.log(`teste ${ultimaImg}`);
+  // title
+  const storageTittle = localStorage.getItem("titleArray");
+  const arrayTitle = JSON.parse(storageTittle);
+  const ultimaTitle = arrayTitle[arrayTitle.length - 1];
+  console.log(`teste ${ultimaImg} ${storageTittle}`);
   img.innerHTML += `
     
         <img class="foto-img" src='${ultimaImg}' />
