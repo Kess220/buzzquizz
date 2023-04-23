@@ -7,6 +7,69 @@ function criarQuizz() {
   paginaCriancaoQuiz.classList.remove('invisivel')
   console.log('Estou aqui')
 }
+function meusQuizzes() {
+  const title = localStorage.getItem('titleArray')
+  const img = localStorage.getItem('imgArray')
+  const titlePronto = JSON.parse(title)
+  const imgPronto = JSON.parse(img)
+  console.log(img, title)
+  if (localStorage.length > 0) {
+    for (let i = 0; i < titlePronto.length && imgPronto.length; i++) {
+      const tudoDentro = document.querySelector('.tudoDentro')
+      tudoDentro.innerHTML += `
+    <div class="quizzes" >
+        <img src="${imgPronto[i]}" alt="" />
+        <div>
+           <p>${titlePronto[i]}</p>
+        </div>
+    </div>
+    
+    `
+    }
+  }
+}
+meusQuizzes()
+function todosOsQuizzes() {
+  const criacaoQuizz = document.querySelector('.criacaoQuizz')
+  const comQuizzJaFeito = document.querySelector('.comQuizzJaFeito')
+  if (localStorage.length === 0) {
+    console.log('funciona')
+  } else {
+    criacaoQuizz.classList.add('invisivel')
+    comQuizzJaFeito.classList.remove('invisivel')
+  }
+  const todosOsQuizzesRenderizar = document.querySelector(
+    '.todosOsQuizzesRenderizar'
+  )
+  axios
+    .get('https://mock-api.driven.com.br/api/vm/buzzquizz/quizzes')
+    .then(response => {
+      console.log(response.data.length)
+      for (let i = 0; i < response.data.length; i++) {
+        const title = response.data[i].title
+        const image = response.data[i].image
+        const id = response.data[i].id
+        todosOsQuizzesRenderizar.innerHTML += `
+        <div class="quizzes ${id}" >
+          <img src="${image}" alt="" />
+          <div>
+            <p>${title}</p>
+          </div>
+        </div>
+        
+        `
+      }
+    })
+    .catch(erro => {
+      console.log('deu errado')
+    })
+  //pegar a div que ficar todos os quizzes
+  //pega as informações no servidor
+  // depois localizar todas as informações que eu preciso
+  // imprimir no innerHtml
+}
+todosOsQuizzes()
+
 function buscarQuizz() {
   axios
     .get('https://mock-api.driven.com.br/api/vm/buzzquizz/quizzes')

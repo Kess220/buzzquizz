@@ -33,7 +33,7 @@ header > p {
   align-items: center;
 }
 
-.paginaInicial > .criacaoQuizz {
+.englomenradoCriacaoQuizz > .criacaoQuizz {
   width: 1051px;
   height: 181px;
   border: 1px dashed #d4d4d4;
@@ -88,38 +88,81 @@ header > p {
   margin-bottom: 15px;
 }
 
-.todosOsQuizzes .quizzes > img {
+
+.quizzes > img {
   width: 340px;
   height: 181px;
-  background: linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0) 0%,
-      rgba(0, 0, 0, 0.5) 64.58%,
-      #000000 100%
-    ),
-    url(/img/simpson.png);
+
   border-radius: 5px;
+
 }
 
-.todosOsQuizzes .quizzes > div {
+.quizzes > div {
   position: absolute;
   z-index: 66;
-  width: 100%;
   bottom: 0;
-  width: 301px;
+  left: 0;
+  width: 309px;
 }
-
+.comQuizzJaFeito > div:nth-child(2) > .quizzes {
+  width: 340px;
+  height: 181px;
+  position: relative;
+  margin-bottom: -10px;
+  margin-right: 15px;
+}
+.comQuizzJaFeito .quizzes > div{
+  position: absolute;
+  z-index: 66;
+  bottom: 0;
+  left: 0;
+  width: 309px;
+}
+.todosOsQuizzesRenderizar{
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 374px;
+}
 .todosOsQuizzes > div {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
+.comQuizzJaFeito{
+  width: 1051px;
+  margin-top: 69px;
+}
+.comQuizzJaFeito > div:nth-child(1){
+  display: flex;
+  align-items: center;
+  margin-bottom: 13px;
+}
 
-.todosOsQuizzes .quizzes > div > p {
+.comQuizzJaFeito > div:nth-child(1) > p{
+  font-size: 20px;
+  font-weight: bold;
+  margin-right: 5px;
+}
+.comQuizzJaFeito > div:nth-child(1) > ion-icon{
+  font-size: 30px;
+  color: #EC362D;
+
+}
+.comQuizzJaFeito > div:nth-child(1) > p:hover, ion-icon:hover{
+  cursor: pointer;
+  
+}
+.quizzes > div > p {
+  width: 309px;
   font-size: 19px;
   color: white;
   margin-bottom: 17px;
-  text-align: center;
+  margin-left: 17px;
+  text-align: left;
+  max-width: 500px; 
+  white-space: nowrap;
+  overflow: hidden; 
+  text-overflow: ellipsis; 
 }
 
 .invisivel {
