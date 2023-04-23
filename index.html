@@ -18,50 +18,27 @@
       <p>BuzzQuizz</p>
     </header>
     <main>
-      <section class="paginaInicial  ">
-        <div class="criacaoQuizz">
-          <p>Você não criou nenhum quizz ainda :</p>
-          <button onclick="criarQuizz()">Criar Quizz</button>
+      <section class="paginaInicial">
+        <div class="englomenradoCriacaoQuizz">
+          <div class="criacaoQuizz">
+            <p>Você não criou nenhum quizz ainda :</p>
+            <button onclick="criarQuizz()">Criar Quizz</button>
+          </div>
+          <div class="comQuizzJaFeito invisivel">
+            <div>
+              <p onclick="criarQuizz()">Seus Quizzes</p>
+              <ion-icon onclick="criarQuizz()" name="add-circle"></ion-icon>
+            </div>
+            <div class="tudoDentro ">
+             
+            </div>
+          </div>
         </div>
+
         <div class="todosOsQuizzes">
           <p>Todos os Quizzes</p>
-          <div>
-            <div class="quizzes">
-              <img src="./img/simpson.png" alt="" />
-              <div>
-                <p>Quanto da sua personalidade é igual de um gato?</p>
-              </div>
-            </div>
-            <div class="quizzes">
-              <img src="./img/simpson.png" alt="" />
-              <div>
-                <p>Quanto da sua personalidade é igual de um gato?</p>
-              </div>
-            </div>
-            <div class="quizzes">
-              <img src="./img/simpson.png" alt="" />
-              <div>
-                <p>Quanto da sua personalidade é igual de um gato?</p>
-              </div>
-            </div>
-            <div class="quizzes">
-              <img src="./img/simpson.png" alt="" />
-              <div>
-                <p>Quanto da sua personalidade é igual de um gato?</p>
-              </div>
-            </div>
-            <div class="quizzes">
-              <img src="./img/simpson.png" alt="" />
-              <div>
-                <p>Quanto da sua personalidade é igual de um gato?</p>
-              </div>
-            </div>
-            <div class="quizzes">
-              <img src="./img/simpson.png" alt="" />
-              <div>
-                <p>Quanto da sua personalidade é igual de um gato?</p>
-              </div>
-            </div>
+          <div class="todosOsQuizzesRenderizar">
+            
           </div>
         </div>
       </section>
@@ -109,8 +86,7 @@
       <section class="quis-pronto invisivel">
         <div>
           <h2>Seu quizz está pronto!</h2>
-          <div class="img">
-          </div>
+          <div class="img"></div>
           <button class="acessar-quis">Acessar Quizz</button>
           <button class="volta-home">Voltar para home</button>
         </div>
@@ -125,7 +101,6 @@
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="./js/script.js"></script>
     <script src="./js/axios.js"></script>
   </body>
 </html>
