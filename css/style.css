@@ -21,7 +21,7 @@ header {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-header > p {
+header>p {
   color: #ffffff;
   font-size: 37px;
   font-weight: bold;
@@ -33,7 +33,7 @@ header > p {
   align-items: center;
 }
 
-.paginaInicial > .criacaoQuizz {
+.englomenradoCriacaoQuizz>.criacaoQuizz {
   width: 1051px;
   height: 181px;
   border: 1px dashed #d4d4d4;
@@ -45,7 +45,7 @@ header > p {
   border-radius: 5px;
 }
 
-.criacaoQuizz > p {
+.criacaoQuizz>p {
   width: 250px;
   font-size: 20px;
   color: #b9b9b9;
@@ -53,7 +53,7 @@ header > p {
   text-align: center;
 }
 
-.criacaoQuizz > button {
+.criacaoQuizz>button {
   width: 151px;
   height: 40px;
   border-radius: 50px;
@@ -64,7 +64,7 @@ header > p {
   margin-top: 20px;
 }
 
-.criacaoQuizz > button:hover {
+.criacaoQuizz>button:hover {
   cursor: pointer;
 }
 
@@ -74,7 +74,7 @@ header > p {
   margin-top: 77px;
 }
 
-.todosOsQuizzes > p {
+.todosOsQuizzes>p {
   margin-bottom: 12px;
   font-size: 20px;
   font-weight: bold;
@@ -88,38 +88,92 @@ header > p {
   margin-bottom: 15px;
 }
 
-.todosOsQuizzes .quizzes > img {
+.quizzes>img {
   width: 340px;
   height: 181px;
-  background: linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0) 0%,
-      rgba(0, 0, 0, 0.5) 64.58%,
-      #000000 100%
-    ),
-    url(/img/simpson.png);
+
   border-radius: 5px;
 }
 
-.todosOsQuizzes .quizzes > div {
+.quizzes>div {
   position: absolute;
   z-index: 66;
-  width: 100%;
   bottom: 0;
-  width: 301px;
+  left: 0;
+  width: 309px;
 }
 
-.todosOsQuizzes > div {
+.comQuizzJaFeito>div:nth-child(2)>.quizzes {
+  width: 340px;
+  height: 181px;
+  position: relative;
+  margin-bottom: -10px;
+  margin-right: 15px;
+}
+
+.comQuizzJaFeito .quizzes>div {
+  position: absolute;
+  z-index: 66;
+  bottom: 0;
+  left: 0;
+  width: 309px;
+}
+
+.todosOsQuizzesRenderizar {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 374px;
+}
+
+.todosOsQuizzes>div {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
 
-.todosOsQuizzes .quizzes > div > p {
+.comQuizzJaFeito {
+  width: 1051px;
+  margin-top: 69px;
+}
+
+.comQuizzJaFeito>div:nth-child(1) {
+  display: flex;
+  align-items: center;
+  margin-bottom: 13px;
+}
+
+.comQuizzJaFeito>div:nth-child(1)>p {
+  font-size: 20px;
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.comQuizzJaFeito>div:nth-child(1)>ion-icon {
+  font-size: 30px;
+  color: #ec362d;
+}
+
+.comQuizzJaFeito>div:nth-child(1)>p:hover,
+ion-icon:hover {
+  cursor: pointer;
+}
+
+.quizzes>div>p {
+  width: 309px;
   font-size: 19px;
   color: white;
   margin-bottom: 17px;
-  text-align: center;
+  margin-left: 17px;
+  text-align: left;
+  max-width: 500px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tudoDentro {
+  display: flex;
+  justify-content: space-between;
 }
 
 .invisivel {
@@ -130,7 +184,7 @@ header > p {
   display: inherit;
 }
 
-.paginaCriancaoQuiz > div {
+.paginaCriancaoQuiz>div {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -138,19 +192,19 @@ header > p {
   margin-top: 71px;
 }
 
-.paginaCriancaoQuiz > div > p {
+.paginaCriancaoQuiz>div>p {
   font-size: 23px;
   font-weight: bold;
   margin-bottom: 48px;
 }
 
-.paginaCriancaoQuiz > div > div {
+.paginaCriancaoQuiz>div>div {
   width: 600px;
   height: 256px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
 }
 
-.paginaCriancaoQuiz > div > div > input {
+.paginaCriancaoQuiz>div>div>input {
   width: 564px;
   height: 46px;
   margin-bottom: 9px;
@@ -160,19 +214,19 @@ header > p {
   font-size: 19px;
 }
 
-.paginaCriancaoQuiz > div > div > input::placeholder {
+.paginaCriancaoQuiz>div>div>input::placeholder {
   font-size: 19px;
   font-style: italic;
 }
 
-.paginaCriancaoQuiz > div > div {
+.paginaCriancaoQuiz>div>div {
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
 }
 
-.paginaCriancaoQuiz > div > button {
+.paginaCriancaoQuiz>div>button {
   width: 370px;
   height: 54px;
   border-radius: 15px;
@@ -184,7 +238,7 @@ header > p {
   margin-top: 85px;
 }
 
-.paginaCriancaoQuiz > div > button:hover {
+.paginaCriancaoQuiz>div>button:hover {
   cursor: pointer;
 }
 
@@ -194,12 +248,14 @@ header > p {
   flex-direction: column;
   align-items: center;
 }
-.criar-perguntas > h2 {
+
+.criar-perguntas>h2 {
   font-size: 23px;
   font-weight: bold;
   margin-top: 63px;
   margin-bottom: 36px;
 }
+
 .perguntas {
   display: flex;
   flex-direction: column;
@@ -210,42 +266,49 @@ header > p {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
   margin-bottom: 50px;
 }
-.perguntas > p {
+
+.perguntas>p {
   font-size: 20px;
   font-weight: bold;
 }
+
 .pergunta {
   margin-top: 27px;
   margin-bottom: 12px;
 }
+
 .respostaCorreta {
   margin-top: 28px;
   margin-bottom: 24px;
 }
+
 .respostaIncorreta {
   margin-top: 28px;
   margin-bottom: 14px;
 }
 
-.perguntas > input {
+.perguntas>input {
   width: 564px;
   height: 46px;
   border-radius: 5px;
   border: 1px solid #d1d1d1;
   padding: 23px;
 }
-.perguntas > input::placeholder {
+
+.perguntas>input::placeholder {
   font-size: 19px;
   font-style: italic;
 }
-.perguntas > input:nth-child(2),
+
+.perguntas>input:nth-child(2),
 input:nth-child(5),
 input:nth-child(8),
 input:nth-child(10),
 input:nth-child(12) {
   margin-bottom: 14px;
 }
-.perguntas > input:nth-child(9),
+
+.perguntas>input:nth-child(9),
 input:nth-child(11) {
   margin-bottom: 32px;
 }
@@ -255,7 +318,7 @@ textarea:focus {
   outline: 0;
 }
 
-.criar-perguntas > button {
+.criar-perguntas>button {
   width: 355px;
   height: 54px;
   border-radius: 15px;
@@ -265,9 +328,11 @@ textarea:focus {
   border: none;
   margin-bottom: 50px;
 }
-.criar-perguntas > button:hover {
+
+.criar-perguntas>button:hover {
   cursor: pointer;
 }
+
 /* tela 10 */
 .decisao-dos-niveis,
 .quis-pronto {
@@ -285,19 +350,22 @@ textarea:focus {
   padding-left: 16px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
 }
-.decisao-dos-niveis > h2 {
+
+.decisao-dos-niveis>h2 {
   font-size: 23px;
   margin-top: 63px;
   margin-bottom: 43px;
   font-weight: bold;
 }
-.segura-nivel > p {
+
+.segura-nivel>p {
   font-size: 20px;
   font-weight: bold;
   margin-bottom: 12px;
   margin-top: 27px;
 }
-.segura-nivel > input {
+
+.segura-nivel>input {
   width: 564px;
   height: 46px;
   padding-left: 23px;
@@ -306,11 +374,13 @@ textarea:focus {
   border-radius: 5px;
   font-size: 19px;
 }
-.segura-nivel > input::placeholder {
+
+.segura-nivel>input::placeholder {
   font-style: italic;
   color: #bababa;
 }
-.decisao-dos-niveis > button {
+
+.decisao-dos-niveis>button {
   width: 325px;
   height: 54px;
   border-radius: 15px;
@@ -320,9 +390,11 @@ textarea:focus {
   color: #fff5f4;
   margin-top: 75px;
 }
-.decisao-dos-niveis > button:hover {
+
+.decisao-dos-niveis>button:hover {
   cursor: pointer;
 }
+
 /* tela 11 */
 .titulo-img {
   color: white;
@@ -334,19 +406,22 @@ textarea:focus {
   bottom: 0;
   margin-bottom: 23px;
 }
-.quis-pronto > div > h2 {
+
+.quis-pronto>div>h2 {
   font-size: 23px;
   font-weight: bold;
   margin-top: 71px;
   margin-bottom: 46px;
 }
-.quis-pronto > div {
+
+.quis-pronto>div {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 500px;
 }
+
 .foto-img {
   width: 500px;
   height: 266px;
@@ -393,18 +468,18 @@ textarea:focus {
     height: 69px;
   }
 
-  header > p {
+  header>p {
     font-size: 34px;
   }
 
-  .paginaInicial > .criacaoQuizz {
+  .paginaInicial>.criacaoQuizz {
     /**/
     width: 80%;
     height: 181px;
     margin-top: 50px;
   }
 
-  .criacaoQuizz > button {
+  .criacaoQuizz>button {
     /**/
     width: 40%;
     height: 30px;
@@ -424,14 +499,14 @@ textarea:focus {
     margin-bottom: 15px;
   }
 
-  .todosOsQuizzes .quizzes > img {
+  .todosOsQuizzes .quizzes>img {
     width: 100%;
     height: 150px;
     border-radius: 5px;
     background-size: cover;
   }
 
-  .todosOsQuizzes .quizzes > div > p {
+  .todosOsQuizzes .quizzes>div>p {
     /**/
     font-size: 14px;
     margin-bottom: 5px;
@@ -469,7 +544,7 @@ textarea:focus {
     margin-bottom: 15px;
   }
 
-  .perguntas > ion-icon {
+  .perguntas>ion-icon {
     flex-direction: column;
     justify-content: flex-end;
   }

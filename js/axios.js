@@ -1,5 +1,75 @@
 axios.defaults.headers.common["Authorization"] = "mIsztIcWVzidlM4aidMUviCe";
 // Buscar Quizz
+function criarQuizz() {
+  const paginaInicial = document.querySelector(".paginaInicial");
+  const paginaCriancaoQuiz = document.querySelector(".paginaCriancaoQuiz");
+  paginaInicial.classList.add("invisivel");
+  paginaCriancaoQuiz.classList.remove("invisivel");
+  console.log("Estou aqui");
+}
+function meusQuizzes() {
+  const title = localStorage.getItem("titleArray");
+  const img = localStorage.getItem("imgArray");
+  const titlePronto = JSON.parse(title);
+  const imgPronto = JSON.parse(img);
+  console.log(img, title);
+  if (localStorage.length > 0) {
+    for (let i = 0; i < titlePronto.length && imgPronto.length; i++) {
+      const tudoDentro = document.querySelector(".tudoDentro");
+      tudoDentro.innerHTML += `
+    <div class="quizzes" >
+        <img src="${imgPronto[i]}" alt="" />
+        <div>
+           <p>${titlePronto[i]}</p>
+        </div>
+    </div>
+    
+    `;
+    }
+  }
+}
+meusQuizzes();
+function todosOsQuizzes() {
+  const criacaoQuizz = document.querySelector(".criacaoQuizz");
+  const comQuizzJaFeito = document.querySelector(".comQuizzJaFeito");
+  if (localStorage.length === 0) {
+    console.log("funciona");
+  } else {
+    criacaoQuizz.classList.add("invisivel");
+    comQuizzJaFeito.classList.remove("invisivel");
+  }
+  const todosOsQuizzesRenderizar = document.querySelector(
+    ".todosOsQuizzesRenderizar"
+  );
+  axios
+    .get("https://mock-api.driven.com.br/api/vm/buzzquizz/quizzes")
+    .then((response) => {
+      console.log(response.data.length);
+      for (let i = 0; i < response.data.length; i++) {
+        const title = response.data[i].title;
+        const image = response.data[i].image;
+        const id = response.data[i].id;
+        todosOsQuizzesRenderizar.innerHTML += `
+        <div class="quizzes ${id}" >
+          <img src="${image}" alt="" />
+          <div>
+            <p>${title}</p>
+          </div>
+        </div>
+        
+        `;
+      }
+    })
+    .catch((erro) => {
+      console.log("deu errado");
+    });
+  //pegar a div que ficar todos os quizzes
+  //pega as informações no servidor
+  // depois localizar todas as informações que eu preciso
+  // imprimir no innerHtml
+}
+todosOsQuizzes();
+
 function buscarQuizz() {
   axios
     .get("https://mock-api.driven.com.br/api/vm/buzzquizz/quizzes")
@@ -60,7 +130,7 @@ function gerarPergunta() {
     imgArray.push(urlImg);
     localStorage.setItem("imgArray", JSON.stringify(imgArray));
     console.log(storedImgArray);
-    titleArray = JSON.parse(localStorage.getItem("imgArray")) || [];
+    titleArray = JSON.parse(localStorage.getItem("titleArray")) || [];
     titleArray.push(title);
     localStorage.setItem("titleArray", JSON.stringify(titleArray));
 
@@ -185,15 +255,11 @@ formLevels.addEventListener("submit", (e) => {
     .post("https://mock-api.driven.com.br/api/vm/buzzquizz/quizzes", objFinal)
     .then((response) => {
       let id = response.data.id;
-      let title = response.data.title;
-      let img = response.data.image;
       idArray = JSON.parse(localStorage.getItem("idArray")) || [];
 
       idArray.push(id);
       // Armazena os arrays atualizados no localStorage
       localStorage.setItem("idArray", JSON.stringify(idArray));
-      titleArray = JSON.parse(localStorage.getItem("titleArray")) || [];
-      imgArray = JSON.parse(localStorage.getItem("imgArray")) || [];
       console.log(storedIdArray);
     })
     .catch((error) => {
@@ -209,14 +275,16 @@ formLevels.addEventListener("submit", (e) => {
   const storageImgArray = localStorage.getItem("imgArray");
   const arrayUltimaImg = JSON.parse(storageImgArray);
   const ultimaImg = arrayUltimaImg[arrayUltimaImg.length - 1];
-
-  console.log(`teste ${ultimaImg}`);
+  // title
+  const storageTittle = localStorage.getItem("titleArray");
+  const arrayTitle = JSON.parse(storageTittle);
+  const ultimaTitle = arrayTitle[arrayTitle.length - 1];
+  console.log(`teste ${ultimaImg} ${storageTittle}`);
   img.innerHTML += `
     
         <img class="foto-img" src='${ultimaImg}' />
-        <p class="titulo-img"></p>
+        <p class="titulo-img">${ultimaTitle}</p>
     
-
     
     `;
 });
