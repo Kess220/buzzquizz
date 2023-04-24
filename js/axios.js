@@ -20,7 +20,7 @@ function meusQuizzes() {
     <div class="quizzes" >
         <img src="${imgPronto[i]}" alt="" />
         <div>
-           <p>${titlePronto[i]}</p>
+          <p>${titlePronto[i]}</p>
         </div>
     </div>
     
@@ -51,7 +51,7 @@ function todosOsQuizzes() {
         const id = response.data[i].id;
         todosOsQuizzesRenderizar.innerHTML += `
         <div class="quizzes ${id}" >
-          <img src="${image}" alt="" />
+          <img onclick="buscarQuizzID(${id})" src="${image}" alt="" />
           <div>
             <p>${title}</p>
           </div>
@@ -61,7 +61,7 @@ function todosOsQuizzes() {
       }
     })
     .catch((erro) => {
-      console.log("deu errado");
+      console.log(erro);
     });
   //pegar a div que ficar todos os quizzes
   //pega as informações no servidor
@@ -84,10 +84,17 @@ buscarQuizz();
 function buscarQuizzID(ID) {
   axios
     .get(`https://mock-api.driven.com.br/api/vm/buzzquizz/quizzes/${ID}`)
-    .then((response) => {})
+    .then((response) => {
+      const paginaInicial = document.querySelector(".paginaInicial");
+      paginaInicial.classList.add("invisivel");
+      let title = response.data.title;
+      let img = response.data.image;
+      let questions1 = response.data.questions[0];
+      console.log(title, img, questions1);
+      console.log(response.data);
+    })
     .catch((error) => {});
 }
-buscarQuizzID(2);
 
 let quizzNovo = axios
   .get("https://mock-api.driven.com.br/api/vm/buzzquizz/quizzes")
