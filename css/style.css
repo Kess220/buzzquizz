@@ -8,7 +8,7 @@
 
 body {
   font-family: 'Roboto', sans-serif;
-  background: #FAFAFA;
+  background: #fafafa;
 }
 
 /*Adryel tela 1 desktop */
@@ -265,7 +265,7 @@ ion-icon:hover {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.tudoDentro{
+.tudoDentro {
   display: flex;
   justify-content: space-between;
 }
@@ -534,31 +534,30 @@ textarea:focus {
 tela 3
 */
 
-.cabeca{
+.cabeca {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-
 }
-.cabeca > img{
-  object-fit: cover;  
+.cabeca > img {
+  object-fit: cover;
   width: 100vw;
   height: 200px;
-  filter: brightness(55%)
+  filter: brightness(55%);
 }
-.cabeca > p{
+.cabeca > p {
   position: absolute;
   font-size: 39px;
-  color:#FFFFFF ;
+  color: #ffffff;
 }
-.contentPergunta{
+.contentPergunta {
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
 }
-.tudoPergunta{
+.tudoPergunta {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -568,21 +567,20 @@ tela 3
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
   margin-top: 42px;
 }
-.pergunta{
+.perguntaQuizz {
   width: 689px;
   height: 137px;
-  background: #434ca0;
+  background-color: #434ca0;
   display: flex;
   align-items: center;
   justify-content: center;
-
 }
-.pergunta > p {
+.perguntaQuizz > p {
   font-size: 23px;
   font-weight: 700;
-  color: #FFFFFF;
+  color: #ffffff;
 }
-.resposta{
+.resposta {
   width: 689px;
   display: flex;
   flex-wrap: wrap;
@@ -598,13 +596,14 @@ tela 3
   font-weight: 700;
   margin-bottom: 18px;
   margin-top: 8px;
+  width: 329px;
 }
-.quizzAcerto{
+.quizzAcerto {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.terminou{
+.terminou {
   width: 759px;
   height: 430px;
   display: flex;
@@ -614,10 +613,10 @@ tela 3
   margin-top: 44px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
 }
-.terminou > div:nth-child(1){
+.terminou > div:nth-child(1) {
   width: 727px;
   height: 99px;
-  background: #EC362D;
+  background: #ec362d;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -627,29 +626,29 @@ tela 3
   color: #ffffff;
   font-weight: 700;
 }
-.terminou > div:nth-child(2){
+.terminou > div:nth-child(2) {
   display: flex;
   width: 727px;
   margin-top: 18px;
 }
-.terminou > div:nth-child(2) > div:nth-child(1) > img{
+.terminou > div:nth-child(2) > div:nth-child(1) > img {
   width: 364px;
   height: 273px;
-  object-fit: cover;  
+  object-fit: cover;
 }
 .terminou > div:nth-child(2) > div:nth-child(2) {
   width: 328px;
   height: 250px;
   margin-left: 21px;
 }
-.terminou > div:nth-child(2) > div:nth-child(2) > p{
+.terminou > div:nth-child(2) > div:nth-child(2) > p {
   font-size: 19px;
   font-weight: bold;
 }
-button:hover{
+button:hover {
   cursor: pointer;
 }
-.quizzAcerto > button{
+.quizzAcerto > button {
   width: 261px;
   height: 52px;
   border-radius: 15px;
@@ -657,14 +656,14 @@ button:hover{
   font-weight: 400;
   border: none;
 }
-.quizzAcerto > .reiniciarQuizz{
-  background-color: #EC362D ;
-  color: #FFF5F4;
+.quizzAcerto > .reiniciarQuizz {
+  background-color: #ec362d;
+  color: #fff5f4;
   margin-top: 57px;
   margin-bottom: 16px;
 }
-.quizzAcerto > .voltarHome{
+.quizzAcerto > .voltarHome {
   color: #818181;
   margin-bottom: 50px;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
 }
