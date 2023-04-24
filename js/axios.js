@@ -10,15 +10,21 @@ function criarQuizz() {
 function meusQuizzes() {
   const title = localStorage.getItem("titleArray");
   const img = localStorage.getItem("imgArray");
+  const id = localStorage.getItem("idArray");
+  const idPronto = JSON.parse(id);
   const titlePronto = JSON.parse(title);
   const imgPronto = JSON.parse(img);
-  console.log(img, title);
+  console.log(img, title, id);
   if (localStorage.length > 0) {
-    for (let i = 0; i < titlePronto.length && imgPronto.length; i++) {
+    for (
+      let i = 0;
+      i < titlePronto.length && imgPronto.length && idPronto.length;
+      i++
+    ) {
       const tudoDentro = document.querySelector(".tudoDentro");
       tudoDentro.innerHTML += `
     <div class="quizzes" >
-        <img src="${imgPronto[i]}" alt="" />
+        <img  src="${imgPronto[i]}" alt="" />
         <div>
           <p>${titlePronto[i]}</p>
         </div>
@@ -84,14 +90,67 @@ buscarQuizz();
 function buscarQuizzID(ID) {
   axios
     .get(`https://mock-api.driven.com.br/api/vm/buzzquizz/quizzes/${ID}`)
-    .then((response) => {
+    .then((promisse) => {
       const paginaInicial = document.querySelector(".paginaInicial");
       paginaInicial.classList.add("invisivel");
-      let title = response.data.title;
-      let img = response.data.image;
-      let questions1 = response.data.questions[0];
-      console.log(title, img, questions1);
-      console.log(response.data);
+      const quizzAcerto = document.querySelector(".quizzAcerto");
+      quizzAcerto.classList.remove("invisivel");
+      console.log(promisse);
+      quizzAcerto.innerHTML = "";
+      const cabeca = document.createElement("div");
+      cabeca.setAttribute("class", "cabeca");
+      quizzAcerto.appendChild(cabeca);
+      cabeca.innerHTML += `
+  <img src="${promisse.data.image}" alt="">
+  <p>${promisse.data.title}</p>
+
+  `;
+      console.log(promisse.data.questions.length);
+
+      for (let i = 0; i < promisse.data.questions.length; i++) {
+        const contentPergunta = document.createElement("div");
+        contentPergunta.setAttribute("class", "contentPergunta");
+        quizzAcerto.appendChild(contentPergunta);
+
+        setTimeout(() => {
+          const perguntaQuizz = document.querySelector(".perguntaQuizz");
+          if (perguntaQuizz) {
+            perguntaQuizz.style.backgroundColor = "#0000ff";
+          } else {
+            console.log('A classe ".perguntaQuizz" não foi encontrada.');
+          }
+        }, 10);
+        console.log(
+          `${promisse.data.questions[i].answers[i].image} oi oi oi oi oi oi oi `
+        );
+        contentPergunta.innerHTML += `
+      <div class="tudoPergunta">
+              <div class="perguntaQuizz">
+                <p>${promisse.data.questions[i].title}</p>
+              </div>
+              <div class="resposta ">
+                <div>
+                  <img src="${promisse.data.questions[i].answers[0].image}" alt="">
+                  <p>${promisse.data.questions[i].answers[0].text}</p>
+                </div>
+                <div>
+                  <img src="${promisse.data.questions[i].answers[1].image}" alt="">
+                  <p>${promisse.data.questions[i].answers[1].text}</p>
+                </div>
+                <div>
+                  <img src="${promisse.data.questions[i].answers[2].image}" alt="">
+                  <p>${promisse.data.questions[i].answers[2].text}</p>
+                </div>
+                <div>
+                  <img src="${promisse.data.questions[i].answers[3].image}" alt="">
+                  <p>${promisse.data.questions[i].answers[3].text}</p>
+                </div>
+              </div>
+            </div>
+      
+      
+      `;
+      }
     })
     .catch((error) => {});
 }
@@ -268,6 +327,7 @@ formLevels.addEventListener("submit", (e) => {
       // Armazena os arrays atualizados no localStorage
       localStorage.setItem("idArray", JSON.stringify(idArray));
       console.log(storedIdArray);
+      console.log(response);
     })
     .catch((error) => {
       console.error(error);
@@ -295,3 +355,83 @@ formLevels.addEventListener("submit", (e) => {
     
     `;
 });
+// Vou começar os quizzes aqui
+function voltarHome() {
+  const quizzAcerto = document.querySelector(".quizzAcerto");
+  const paginaInicial = document.querySelector(".paginaInicial");
+  quizzAcerto.classList.add("invisivel");
+  paginaInicial.classList.remove("invisivel");
+}
+function acessarQuizz() {
+  const quisPronto = document.querySelector(".quis-pronto");
+  const quizzAcerto = document.querySelector(".quizzAcerto");
+  quisPronto.classList.add("invisivel");
+  quizzAcerto.classList.remove("invisivel");
+
+  gerarQuizz();
+}
+function gerarQuizz() {
+  let idArray = localStorage.getItem("idArray");
+  let id = JSON.parse(idArray);
+  let ultimoId = id[id.length - 1];
+  console.log(typeof ultimoId, "estou aqui");
+
+  axios
+    .get(`https://mock-api.driven.com.br/api/vm/buzzquizz/quizzes/${ultimoId}`)
+    .then((promisse) => {
+      console.log(promisse);
+      const quizzAcerto = document.querySelector(".quizzAcerto");
+      quizzAcerto.innerHTML = "";
+      const cabeca = document.createElement("div");
+      cabeca.setAttribute("class", "cabeca");
+      quizzAcerto.appendChild(cabeca);
+      cabeca.innerHTML += `
+  <img src="${promisse.data.image}" alt="">
+  <p>${promisse.data.title}</p>
+
+  `;
+      console.log(promisse.data.questions.length);
+
+      for (let i = 0; i < promisse.data.questions.length; i++) {
+        const contentPergunta = document.createElement("div");
+        contentPergunta.setAttribute("class", "contentPergunta");
+        quizzAcerto.appendChild(contentPergunta);
+
+        setTimeout(() => {
+          const perguntaQuizz = document.querySelector(".perguntaQuizz");
+          if (perguntaQuizz) {
+            perguntaQuizz.style.backgroundColor = "#0000ff";
+          } else {
+            console.log('A classe ".perguntaQuizz" não foi encontrada.');
+          }
+        }, 10);
+        contentPergunta.innerHTML += `
+      <div class="tudoPergunta">
+              <div class="perguntaQuizz">
+                <p>${promisse.data.questions[i].title}</p>
+              </div>
+              <div class="resposta ">
+                <div>
+                  <img src="${promisse.data.questions[i].answers[0].image}" alt="">
+                  <p>${promisse.data.questions[i].answers[0].text}</p>
+                </div>
+                <div>
+                  <img src="${promisse.data.questions[i].answers[1].image}" alt="">
+                  <p>${promisse.data.questions[i].answers[1].text}</p>
+                </div>
+                <div>
+                  <img src="${promisse.data.questions[i].answers[2].image}" alt="">
+                  <p>${promisse.data.questions[i].answers[2].text}</p>
+                </div>
+                <div>
+                  <img src="${promisse.data.questions[i].answers[3].image}" alt="">
+                  <p>${promisse.data.questions[i].answers[3].text}</p>
+                </div>
+              </div>
+            </div>
+      
+      
+      `;
+      }
+    });
+}

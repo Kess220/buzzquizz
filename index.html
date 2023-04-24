@@ -18,7 +18,7 @@
       <p>BuzzQuizz</p>
     </header>
     <main>
-      <section class="paginaInicial invisivel">
+      <section class="paginaInicial">
         <div class="englomenradoCriacaoQuizz">
           <div class="criacaoQuizz">
             <p>Você não criou nenhum quizz ainda :</p>
@@ -35,7 +35,6 @@
 
         <div class="todosOsQuizzes">
           <p>Todos os Quizzes</p>
-          <div class="todosOsQuizzesRenderizar"></div>
           <div class="todosOsQuizzesRenderizar"></div>
         </div>
       </section>
@@ -85,10 +84,14 @@
           <h2>Seu quizz está pronto!</h2>
           <div class="img"></div>
           <button class="acessar-quis">Acessar Quizz</button>
+          <div class="img"></div>
+          <button onclick="acessarQuizz()" class="acessar-quis">
+            Acessar Quizz
+          </button>
           <button class="volta-home">Voltar para home</button>
         </div>
       </section>
-      <section class="quizzAcerto">
+      <section class="quizzAcerto invisivel">
         <div class="cabeca">
           <img
             src="https://ovicio.com.br/wp-content/uploads/2023/01/20230112-ovicio-hogwarts-legacy-game-2.jpg"
@@ -98,42 +101,7 @@
         </div>
         <div class="contentPergunta">
           <div class="tudoPergunta">
-            <div class="pergunta">
-              <p>Em qual animal Olho-Tonto Moody transfigurou Malfoy?</p>
-            </div>
-            <div class="resposta">
-              <div>
-                <img
-                  src="https://www.petz.com.br/blog/wp-content/uploads/2021/11/enxoval-para-gato-Copia.jpg"
-                  alt=""
-                />
-                <p>Gatíneo</p>
-              </div>
-              <div>
-                <img
-                  src="https://www.petz.com.br/blog/wp-content/uploads/2021/11/enxoval-para-gato-Copia.jpg"
-                  alt=""
-                />
-                <p>Gatíneo</p>
-              </div>
-              <div>
-                <img
-                  src="https://www.petz.com.br/blog/wp-content/uploads/2021/11/enxoval-para-gato-Copia.jpg"
-                  alt=""
-                />
-                <p>Gatíneo</p>
-              </div>
-              <div>
-                <img
-                  src="https://www.petz.com.br/blog/wp-content/uploads/2021/11/enxoval-para-gato-Copia.jpg"
-                  alt=""
-                />
-                <p>Gatíneo</p>
-              </div>
-            </div>
-          </div>
-          <div class="tudoPergunta">
-            <div class="pergunta">
+            <div class="perguntaQuizz">
               <p>Em qual animal Olho-Tonto Moody transfigurou Malfoy?</p>
             </div>
             <div class="resposta">
@@ -189,7 +157,9 @@
           </div>
         </div>
         <button class="reiniciarQuizz">Reiniciar Quizz</button>
-        <button class="voltarHome">Voltar pra home</button>
+        <button onclick="voltarHome()" class="voltarHome">
+          Voltar pra home
+        </button>
       </section>
     </main>
     <script
