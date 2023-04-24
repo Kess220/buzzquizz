@@ -351,6 +351,7 @@ formLevels.addEventListener("submit", (e) => {
     
         <img class="foto-img" src='${ultimaImg}' />
         <p class="titulo-img">${ultimaTitle}</p>
+        <p class="titulo-img">${ultimaTitle}</p>
     
     
     `;
