@@ -22,12 +22,18 @@
         <div class="englomenradoCriacaoQuizz">
           <div class="criacaoQuizz">
             <p>Você não criou nenhum quizz ainda :</p>
-            <button onclick="criarQuizz()">Criar Quizz</button>
+            <button data-test="create-btn" onclick="criarQuizz()">
+              Criar Quizz
+            </button>
           </div>
           <div class="comQuizzJaFeito invisivel">
             <div>
               <p onclick="criarQuizz()">Seus Quizzes</p>
-              <ion-icon onclick="criarQuizz()" name="add-circle"></ion-icon>
+              <ion-icon
+                data-test="create-btn"
+                onclick="criarQuizz()"
+                name="add-circle"
+              ></ion-icon>
             </div>
             <div class="tudoDentro"></div>
           </div>
@@ -42,24 +48,36 @@
         <div>
           <p>Comece pelo começo</p>
           <div>
-            <input id="title" type="text" placeholder="Título do seu quizz" />
             <input
+              data-test="title-input"
+              id="title"
+              type="text"
+              placeholder="Título do seu quizz"
+            />
+            <input
+              data-test="img-input"
               id="urlImg"
               type="url"
               placeholder="URL da imagem do seu quizz"
             />
             <input
+              data-test="questions-amount-input"
               id="numPerg"
               type="number"
               placeholder="Quantidade de perguntas do quizz"
             />
             <input
+              data-test="levels-amount-input"
               id="level"
               type="number"
               placeholder="Quantidade de níveis do quizz"
             />
           </div>
-          <button onclick="gerarPergunta()" type="submit">
+          <button
+            data-test="go-create-questions"
+            onclick="gerarPergunta()"
+            type="submit"
+          >
             Prosseguir pra criar perguntas
           </button>
         </div>
@@ -69,70 +87,36 @@
       <form id="form" class="criar-perguntas invisivel">
         <h2>Crie suas perguntas</h2>
         <div class="criar-pergunta"></div>
-        <button type="submit">Prosseguir pra criar níveis</button>
+        <button data-test="go-create-levels" type="submit">
+          Prosseguir pra criar níveis
+        </button>
       </form>
       <!--TELA 10-DESKTOP FLAVIA-->
       <form id="form-levels" class="decisao-dos-niveis invisivel">
         <h2>Agora, decida os níveis</h2>
         <div class="gerarNiveis"></div>
 
-        <button type="submit">Finalizar Quizz</button>
+        <button data-test="finish" type="submit">Finalizar Quizz</button>
       </form>
 
-      <section class="quis-pronto invisivel" >
+      <section class="quis-pronto invisivel">
         <div>
           <h2>Seu quizz está pronto!</h2>
-          <div class="img"></div>
-          <button onclick="acessarQuizz()" class="acessar-quis">
+          <div data-test="success-banner" class="img"></div>
+          <button
+            data-test="go-quiz"
+            onclick="acessarQuizz()"
+            class="acessar-quis"
+          >
             Acessar Quizz
           </button>
-          <button class="volta-home">Voltar para home</button>
+          <button data-test="go-home" class="volta-home">
+            Voltar para home
+          </button>
         </div>
       </section>
       <section class="quizzAcerto invisivel">
-        <div class="cabeca">
-          <img
-            src="https://ovicio.com.br/wp-content/uploads/2023/01/20230112-ovicio-hogwarts-legacy-game-2.jpg"
-            alt=""
-          />
-          <p>O quão PotterHead é você?</p>
-        </div>
         <div class="contentPergunta">
-          <div class="tudoPergunta">
-            <div class="perguntaQuizz">
-              <p>Em qual animal Olho-Tonto Moody transfigurou Malfoy?</p>
-            </div>
-            <div class="resposta">
-              <div>
-                <img
-                  src="https://www.petz.com.br/blog/wp-content/uploads/2021/11/enxoval-para-gato-Copia.jpg"
-                  alt=""
-                />
-                <p>Gatíneo</p>
-              </div>
-              <div>
-                <img
-                  src="https://www.petz.com.br/blog/wp-content/uploads/2021/11/enxoval-para-gato-Copia.jpg"
-                  alt=""
-                />
-                <p>Gatíneo</p>
-              </div>
-              <div>
-                <img
-                  src="https://www.petz.com.br/blog/wp-content/uploads/2021/11/enxoval-para-gato-Copia.jpg"
-                  alt=""
-                />
-                <p>Gatíneo</p>
-              </div>
-              <div>
-                <img
-                  src="https://www.petz.com.br/blog/wp-content/uploads/2021/11/enxoval-para-gato-Copia.jpg"
-                  alt=""
-                />
-                <p>Gatíneo</p>
-              </div>
-            </div>
-          </div>
           <div class="terminou">
             <div>
               <p>88% de acerto: Você é praticamente um aluno de Hogwarts!</p>
@@ -154,8 +138,8 @@
             </div>
           </div>
         </div>
-        <button class="reiniciarQuizz">Reiniciar Quizz</button>
-        <button onclick="voltarHome()" class="voltarHome">
+        <button data-test="restart" class="reiniciarQuizz">Reiniciar Quizz</button>
+        <button  data-test="go-home"  onclick="voltarHome()" class="voltarHome">
           Voltar pra home
         </button>
       </section>
